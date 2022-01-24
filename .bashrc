@@ -55,7 +55,6 @@ export HISTFILESIZE=
 export PATH=$PATH:/usr/local/bin/
 export HISTSIZE=
 
-
 if [ -n "$DESKTOP_SESSION" ];then
   eval $(gnome-keyring-daemon --start)
   export SSH_AUTH_SOCK
@@ -79,6 +78,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# BEGIN ANSIBLE MANAGED BLOCK
+export PATH=:~/bin:$HOME/istio/bin:$PATH
+export KUBECONFIG=$HOME/.kube/config:/home/filip/code/dev-ops/kubeconfigs/kube_config_kna.yml:/home/filip/code/dev-ops/kubeconfigs/kube_config_sto.yml:$KUBECONFIG
+# END ANSIBLE MANAGED BLOCK
+
 # This is taken from Ubuntu default
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -87,8 +91,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-# BEGIN ANSIBLE MANAGED BLOCK
-export PATH=:~/bin:$HOME/istio/bin:$PATH
-export KUBECONFIG=$HOME/.kube/config:/home/filip/code/dev-ops/kubeconfigs/kube_config_kna.yml:/home/filip/code/dev-ops/kubeconfigs/kube_config_sto.yml:$KUBECONFIG
-# END ANSIBLE MANAGED BLOCK
