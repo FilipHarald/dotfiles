@@ -55,13 +55,6 @@ nmap <leader>h :History<CR>
 nmap <leader>b :Buffers<CR>
 nmap <leader>s :Rg<CR>
 
-" which-key
-" let g:which_key_fallback_to_native_key = 1
-" autocmd VimEnter * let g:which_key_map =  {}
-" autocmd VimEnter * call which_key#register('<Space>', "g:which_key_map")
-nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
-vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
-
 " fugitive.vim bindings
 nmap <leader>gb :Git blame<CR>
 
@@ -97,7 +90,53 @@ endif
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" Start Coc
+" nmap <leader>cs :CocStart<CR>
+
+" Use `<leader>cd` to get all diagnostics of current buffer in location list.
+nmap <leader>cd :CocDiagnostics<CR>
+
+" Format current buffer
+nmap <leader>cf :call CocAction('format')<CR>
+
+" Get suggestions to fix warnings and errors on current line
+nmap <leader>ca <Plug>(coc-codeaction-line)
+
+" Rename a symbol
+nmap <leader>cr <Plug>(coc-rename)
+
+
+" let g:coc_disable_startup_warning = 1
+nmap <leader>cgd <Plug>(coc-definition)
+nmap <leader>cgD <Plug>(coc-declaration)
+nmap <leader>cgy <Plug>(coc-type-definition)
+nmap <leader>cgi <Plug>(coc-implementation)
+nmap <leader>cgr <Plug>(coc-references)
+
+" navigate diagnostics
+nmap <leader>cN <Plug>(coc-diagnostic-prev)
+nmap <leader>cn <Plug>(coc-diagnostic-next)
+
+" Use K to show documentation in preview window.
+nnoremap <leader> cdoc :call <SID>show_documentation()<CR>
+
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call cocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" which-key
+" let g:which_key_fallback_to_native_key = 1
+" autocmd VimEnter * let g:which_key_map =  {}
+" autocmd VimEnter * call which_key#register('<Space>', "g:which_key_map")
+nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
+vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
