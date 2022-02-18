@@ -14,6 +14,9 @@ let mapleader = " "
 " netrw
 let g:netrw_liststyle = 3
 
+" Cursor position
+set cuc
+
 " search
 set hlsearch	     " Highlight all search results
 set smartcase	     " Enable smart-case search
@@ -48,6 +51,7 @@ colorscheme gruvbox
 
 " Fzf bindings
 nmap <leader>f :Files<CR>
+nmap <leader><leader>f :Files %:p:h<CR>
 nmap <leader>gc :Commits<CR>
 nmap <leader>gf :GFiles<CR>
 nmap <leader>gs :GFiles?<CR>

@@ -5,6 +5,8 @@ echo -ne "\e]11;$(printf '#%02x%02x%02x\n' $[RANDOM%50] $[RANDOM%50] $[RANDOM%50
 
 export TERM=xterm-256color
 
+set -o vi
+
 # Aliases
 alias ls='ls --color'
 alias grep='grep --color=auto'
