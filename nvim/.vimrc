@@ -14,9 +14,6 @@ let mapleader = " "
 " netrw
 let g:netrw_liststyle = 3
 
-" Cursor position
-set cuc
-
 " search
 set hlsearch	     " Highlight all search results
 set smartcase	     " Enable smart-case search
@@ -38,6 +35,9 @@ set updatetime=500
 
 set wildmode=longest,list,full
 set wildmenu
+
+set number relativenumber
+set nu rnu
 
 " ==== PACK/DISPLAY
 
@@ -64,8 +64,8 @@ nmap <leader>gb :Git blame<CR>
 
 " == Prettier
 " command! -nargs=0 Prettier :CocCommand prettier.formatFile
-" vmap <leader>f  <Plug>(coc-format-selected)
-" nmap <leader>f  <Plug>(coc-format-selected)
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 " == COC
 " Use tab for trigger completion with characters ahead and navigate.
