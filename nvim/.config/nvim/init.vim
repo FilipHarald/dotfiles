@@ -18,8 +18,9 @@ Plug 'tpope/vim-fugitive'                       " git integration
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integration
 
 " Language specific
-Plug 'pangloss/vim-javascript'                  " JavaScript
-Plug 'neoclide/coc-tsserver'                    " TypeScript
+Plug 'neoclide/coc-tsserver'                    " js
+Plug 'neoclide/coc-eslint'                      " js
+Plug 'fannheyward/coc-styled-components'        " js
 
 call plug#end()
 
