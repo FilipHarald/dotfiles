@@ -62,11 +62,6 @@ nmap <leader>s :Rg<CR>
 " fugitive.vim bindings
 nmap <leader>gb :Git blame<CR>
 
-" == Prettier
-" command! -nargs=0 Prettier :CocCommand prettier.formatFile
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
 " == COC
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -117,13 +112,12 @@ nmap <leader>cgy <Plug>(coc-type-definition)
 nmap <leader>cgi <Plug>(coc-implementation)
 nmap <leader>cgr <Plug>(coc-references)
 
-" navigate diagnostics
-nmap <leader>cN <Plug>(coc-diagnostic-prev)
-nmap <leader>cn <Plug>(coc-diagnostic-next)
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent>[g <Plug>(coc-diagnostic-prev)
+nmap <silent>]g <Plug>(coc-diagnostic-next)
 
-" Use K to show documentation in preview window.
-nnoremap <leader> cdoc :call <SID>show_documentation()<CR>
-
+" Use cdoc to show documentation in preview window.
+nnoremap <leader>cdoc :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
