@@ -1,9 +1,9 @@
 myfunc() {
-  DIR=`pwd`
-  PS1="\`echo -e \"\[\a\]\[\033[01;32m\]\h \[\033[01;34m\]${DIR} \$ \[\033[00m\]\"\`"
+  WD=`pwd`
+  COLORIZED_WD=`printf '%s;%s;%sm%s' $[RANDOM%200+56] $[RANDOM%200+56] $[RANDOM%200+56] $WD`
+  PS1="\`echo -e \"\[\a\]\[\033[01;32m\]\h \[\033[01;34m\]\[\033[0;38;2;${COLORIZED_WD} \[\033[00m\] \$ \"\`"
 }
 PROMPT_COMMAND="myfunc"
-
 
 # Some random background colors for every new terminal
 echo -ne "\e]11;$(printf '#%02x%02x%02x\n' $[RANDOM%50] $[RANDOM%50] $[RANDOM%50])\a"
