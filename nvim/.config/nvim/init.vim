@@ -18,6 +18,7 @@ Plug 'tpope/vim-fugitive'                       " git integration
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integration
 
 " Language specific
+Plug 'neoclide/coc-json'                        " json
 Plug 'neoclide/coc-tsserver'                    " js
 Plug 'neoclide/coc-eslint'                      " js
 Plug 'fannheyward/coc-styled-components'        " js
@@ -34,6 +35,7 @@ inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 
+" Y wil now act as C and D
 noremap Y y$
 
 " Use space as <leader> key

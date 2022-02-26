@@ -1,4 +1,9 @@
-PS1='\[\a\]\[\033[01;32m\]\u@\h \[\033[01;34m\]\W \$ \[\033[00m\]'
+myfunc() {
+  DIR=`pwd`
+  PS1="\`echo -e \"\[\a\]\[\033[01;32m\]\h \[\033[01;34m\]${DIR} \$ \[\033[00m\]\"\`"
+}
+PROMPT_COMMAND="myfunc"
+
 
 # Some random background colors for every new terminal
 echo -ne "\e]11;$(printf '#%02x%02x%02x\n' $[RANDOM%50] $[RANDOM%50] $[RANDOM%50])\a"
