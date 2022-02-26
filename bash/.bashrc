@@ -1,6 +1,10 @@
 myfunc() {
   WD=`pwd`
-  COLORIZED_WD=`printf '%s;%s;%sm%s' $[RANDOM%200+56] $[RANDOM%200+56] $[RANDOM%200+56] $WD`
+  DIR_NUMBERS=`echo $WD | md5sum | grep -Eo "[[:digit:]]{2}"`
+  RED=`echo $DIR_NUMBERS | cut -c1-3`
+  GREEN=`echo $DIR_NUMBERS | cut -c4-6`
+  BLUE=`echo $DIR_NUMBERS | cut -c7-9`
+  COLORIZED_WD=`printf '%s;%s;%sm%s' $[157+RED] $[157+GREEN] $[157+BLUE] $WD`
   PS1="\`echo -e \"\[\a\]\[\033[01;32m\]\h \[\033[01;34m\]\[\033[0;38;2;${COLORIZED_WD} \[\033[00m\] \$ \"\`"
 }
 PROMPT_COMMAND="myfunc"
