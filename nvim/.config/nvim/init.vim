@@ -12,10 +12,12 @@ Plug 'vim-airline/vim-airline'                  " Pretty statusline
 Plug 'morhetz/gruvbox'                          " Gruvbox theme
 
 " Productivity
-Plug 'junegunn/fzf'                             " fuzzy search
-Plug 'junegunn/fzf.vim'                         " need both of these
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'tpope/vim-fugitive'                       " git integration
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integration
+Plug 'liuchengxu/vim-which-key'
 
 " Language specific
 Plug 'neoclide/coc-json'                        " json
@@ -43,6 +45,7 @@ let mapleader = " "
 
 " netrw
 let g:netrw_liststyle = 3
+let g:airline_section_z = airline#section#create(['windowswap', 'obsession', 'linenr', 'colnr'])
 
 " search
 set hlsearch         " Highlight all search results
@@ -92,18 +95,21 @@ colorscheme gruvbox
 
 " ==== PACK/TOOLS
 
-" Fzf bindings
-nmap <leader>f :Files<CR>
-nmap <leader><leader>f :Files %:p:h<CR>
-nmap <leader>gc :Commits<CR>
-nmap <leader>gf :GFiles<CR>
-nmap <leader>gs :GFiles?<CR>
-nmap <leader>h :History<CR>
-nmap <leader>b :Buffers<CR>
-nmap <leader>s :Rg<CR>
+" Telescope bindings
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fd <cmd>lua require('telescope.builtin').find_files({ hidden = true })<cr>
+nnoremap <leader>ss <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>s* <cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.expand("<cword>") })<cr>
+nnoremap <leader>b <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>h <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>hc <cmd>lua require('telescope.builtin').command_history()<cr>
+nnoremap <leader>hs <cmd>lua require('telescope.builtin').search_history()<cr>
+nnoremap <leader>gf <cmd>lua require('telescope.builtin').git_files()<cr>
+nnoremap <leader>gc <cmd>lua require('telescope.builtin').git_commits()<cr>
+nnoremap <leader>gbr <cmd>lua require('telescope.builtin').git_branches()<cr>
 
 " fugitive.vim bindings
-nmap <leader>gb :Git blame<CR>
+nmap <leader>gbl :Git blame<CR>
 nmap <leader>gd :Gdiff<CR>
 
 " == COC

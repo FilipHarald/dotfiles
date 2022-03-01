@@ -1,3 +1,7 @@
+shopt -s histappend
+export HISTFILESIZE=
+export HISTSIZE=
+
 myfunc() {
   WD=`pwd`
   DIR_NUMBERS=`echo $WD | md5sum | grep -Eo "[[:digit:]]{2}"`
@@ -62,10 +66,7 @@ function rei3cont() {
 
 # shell vars
 export EDITOR=vim
-shopt -s histappend
-export HISTFILESIZE=
 export PATH=$PATH:/usr/local/bin/
-export HISTSIZE=
 
 if [ -n "$DESKTOP_SESSION" ];then
   eval $(gnome-keyring-daemon --start)
