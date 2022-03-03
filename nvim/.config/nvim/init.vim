@@ -12,14 +12,13 @@ Plug 'vim-airline/vim-airline'                  " Pretty statusline
 Plug 'morhetz/gruvbox'                          " Gruvbox theme
 
 " Productivity
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'junegunn/fzf'                             " fuzzy search
+Plug 'junegunn/fzf.vim'                         " need both of these
 Plug 'tpope/vim-fugitive'                       " git integration
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integration
 Plug 'liuchengxu/vim-which-key'
 
 " Language specific
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integration
 Plug 'neoclide/coc-json'                        " json
 Plug 'neoclide/coc-tsserver'                    " js
 Plug 'neoclide/coc-eslint'                      " js
@@ -43,6 +42,7 @@ noremap Y y$
 " Use space as <leader> key
 let mapleader = " "
 
+set clipboard+=unnamedplus
 " netrw
 let g:netrw_liststyle = 3
 let g:airline_section_z = airline#section#create(['windowswap', 'obsession', 'linenr', 'colnr'])
@@ -85,34 +85,51 @@ set number relativenumber
 set nu rnu
 set signcolumn=number " Add signs on top of number column
 
-" ==== PACK/DISPLAY
+" ==== DISPLAY
 
 " Gruvbox colorscheme
 set background=dark
 let g:gruvbox_contrast_light='hard'
 colorscheme gruvbox
 
+" ==== TOOLS
 
-" ==== PACK/TOOLS
+" FZF
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
 
-" Telescope
-lua require('telescope').setup { extensions = { fzf = { fuzzy = true, override_generic_sorter = true, override_file_sorter = true, case_mode = "smart_case", } } }
-lua require('telescope').load_extension('fzf')
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fd <cmd>lua require('telescope.builtin').find_files({ hidden = true })<cr>
-nnoremap <leader>ss <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>s* <cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.expand("<cword>") })<cr>
-nnoremap <leader>b <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>h <cmd>lua require('telescope.builtin').help_tags()<cr>
-nnoremap <leader>hc <cmd>lua require('telescope.builtin').command_history()<cr>
-nnoremap <leader>hs <cmd>lua require('telescope.builtin').search_history()<cr>
-nnoremap <leader>gf <cmd>lua require('telescope.builtin').git_files()<cr>
-nnoremap <leader>gc <cmd>lua require('telescope.builtin').git_commits()<cr>
-nnoremap <leader>gbr <cmd>lua require('telescope.builtin').git_branches()<cr>
+imap <c-x><c-p> <plug>(fzf-complete-path)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+nmap <leader>f :Files<CR>
+nmap <leader><leader>f :Files %:p:h<CR>
+nmap <leader>s :Rg<CR>
+nmap <leader>h :History<CR>
+nmap <leader>b :Buffers<CR>
+
+nmap <leader>zw :Windows<CR>
+nmap <leader>zhc :History:<CR>
+nmap <leader>zhs :History/<CR>
+nmap <leader>zc :Commands<CR>
+nmap <leader>zm :Maps<CR>
+
+nmap <leader>gf :GFiles<CR>
+nmap <leader>gdf :GFiles?<CR>
+nmap <leader>gcc :Commits<CR>
+nmap <leader>gcb :BCommits<CR>
 
 " fugitive.vim bindings
-nmap <leader>gbl :Git blame<CR>
+nmap <leader>gb :Git blame<CR>
 nmap <leader>gd :Gdiff<CR>
 
 " == COC
