@@ -3,14 +3,14 @@ export HISTFILESIZE=
 export HISTSIZE=
 
 myfunc() {
-  WD=`pwd`
-  DIR_NUMBERS=`echo $WD | md5sum | grep -Eo "[[:digit:]]{2}"`
-  RED=`echo $DIR_NUMBERS | cut -c1-3`
-  GREEN=`echo $DIR_NUMBERS | cut -c4-6`
-  BLUE=`echo $DIR_NUMBERS | cut -c7-9`
-  THE_DIR=`echo "${WD}" | awk -F/ '{print $NF}'`
-  COLORIZED_WD=`printf '%s;%s;%sm%s' $[157+RED] $[157+GREEN] $[157+BLUE] $THE_DIR`
-  PS1="\`echo -e \"\[\a\]\[\033[01;32m\]\h \[\033[01;34m\]\[\033[0;38;2;${COLORIZED_WD}\[\033[00m\] \$ \"\`"
+  if type -P node > /dev/null && [[ -x $(realpath "/home/filip/bin/color-path.js") ]]
+  then
+    WD=`pwd | ~/bin/color-path.js`
+    THE_DIR=`echo "${WD}" | awk -F/ '{print $NF}'`
+    PS1="\`echo -e \"\[\a\]\[\033[01;32m\]\h\[\033[01;34m\] ${THE_DIR} \$ \"\`"
+  else
+    PS1='\[\a\]\[\033[01;32m\]\h\[\033[01;34m\] \W \$ \[\033[00m\]'
+  fi
 }
 PROMPT_COMMAND="myfunc"
 
@@ -31,6 +31,9 @@ alias gpm='git pull origin master'
 alias ydir='cd ~/code/yggio'
 
 # functions
+ll() {
+  ls --color=never -d $PWD/* | /home/filip/bin/color-path.js
+}
 function gcb() {
   git checkout -b "$@" && \
   git push --set-upstream origin "$@" && \
