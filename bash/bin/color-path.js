@@ -41,7 +41,7 @@ const getColor = (str) => {
 }
 
 const colorize = (str, r, g, b) => {
-  return `\u001B[0;38;2;${r};${g};${b}m${str}\x1b[00m`;
+  return `\\[\u001B[0;38;2;${r};${g};${b}m\\]${str}\\[\x1b[00m\\]`;
 };
 
 rl.on('line', function(line){

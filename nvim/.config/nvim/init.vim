@@ -107,7 +107,7 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-
+let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.95 } }
 imap <c-x><c-p> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
