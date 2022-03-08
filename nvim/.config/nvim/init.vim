@@ -8,14 +8,13 @@ endif
 call plug#begin()
 
 " Styling
-Plug 'vim-airline/vim-airline'                  " Pretty statusline
 Plug 'morhetz/gruvbox'                          " Gruvbox theme
 
 " Productivity
 Plug 'junegunn/fzf'                             " fuzzy search
 Plug 'junegunn/fzf.vim'                         " need both of these
 Plug 'tpope/vim-fugitive'                       " git integration
-Plug 'liuchengxu/vim-which-key'
+Plug 'liuchengxu/vim-which-key'                 " some help with keybinds
 
 " Language specific
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integration
@@ -42,10 +41,11 @@ noremap Y y$
 " Use space as <leader> key
 let mapleader = " "
 
+" integrate with system clipboard
 set clipboard+=unnamedplus
+
 " netrw
 let g:netrw_liststyle = 3
-let g:airline_section_z = airline#section#create(['windowswap', 'obsession', 'linenr', 'colnr'])
 
 " search
 set hlsearch         " Highlight all search results
@@ -75,15 +75,15 @@ set listchars+=nbsp:⣿
 set showcmd
 set updatetime=300
 
-set cursorline
-set scrolloff=5      " Cursor centered-ish
+set cursorline                " help with finding cursor
+set scrolloff=5               " some padding when scrolling
 
-set wildmode=full
+set wildmode=longest:full
 set wildmenu
 
 set number relativenumber
 set nu rnu
-set signcolumn=number " Add signs on top of number column
+set signcolumn=number         " Add signs on top of number column
 
 " ==== DISPLAY
 
@@ -131,76 +131,6 @@ nmap <leader>gcb :BCommits<CR>
 " fugitive.vim bindings
 nmap <leader>gb :Git blame<CR>
 nmap <leader>gd :Gdiff<CR>
-
-" == COC
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
-
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-" Start Coc
-" nmap <leader>cs :CocStart<CR>
-
-" Use `<leader>cd` to get all diagnostics of current buffer in location list.
-nmap <leader>cd :CocDiagnostics<CR>
-
-" Format current buffer
-nmap <leader>cf :call CocAction('format')<CR>
-
-" Get suggestions to fix warnings and errors on current line
-nmap <leader>ca <Plug>(coc-codeaction-line)
-
-" Rename a symbol
-nmap <leader>cr <Plug>(coc-rename)
-
-
-" let g:coc_disable_startup_warning = 1
-nmap <leader>cgd <Plug>(coc-definition)
-nmap <leader>cgD <Plug>(coc-declaration)
-nmap <leader>cgy <Plug>(coc-type-definition)
-nmap <leader>cgi <Plug>(coc-implementation)
-nmap <leader>cgr <Plug>(coc-references)
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent>[g <Plug>(coc-diagnostic-prev)
-nmap <silent>]g <Plug>(coc-diagnostic-next)
-
-" Use cdoc to show documentation in preview window.
-nnoremap <leader>cdoc :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call cocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
-
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " which-key
 " let g:which_key_fallback_to_native_key = 1
