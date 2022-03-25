@@ -124,13 +124,16 @@ nmap <leader>zc :Commands<CR>
 nmap <leader>zm :Maps<CR>
 
 nmap <leader>gf :GFiles<CR>
-nmap <leader>gdf :GFiles?<CR>
+nmap <leader>gfd :GFiles?<CR>
 nmap <leader>gcc :Commits<CR>
 nmap <leader>gcb :BCommits<CR>
 
 " fugitive.vim bindings
 nmap <leader>gb :Git blame<CR>
 nmap <leader>gd :Gdiff<CR>
+nmap <leader>gs :G<CR>
+nmap <leader>gmf :diffget //2<CR>
+nmap <leader>gmj :diffget //3<CR>
 
 " which-key
 " let g:which_key_fallback_to_native_key = 1

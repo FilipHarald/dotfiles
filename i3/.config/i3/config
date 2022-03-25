@@ -19,6 +19,7 @@ bindsym --release Print exec gnome-screenshot -i
 # crop-area screenshot by pressing Mod + printscreen
 bindsym --release $mod+Print exec gnome-screenshot -a
 
+
 # make it more like vim
 set $left h
 set $down j
@@ -214,3 +215,4 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+exec /home/filip/bin/activitywatch/aw-qt
