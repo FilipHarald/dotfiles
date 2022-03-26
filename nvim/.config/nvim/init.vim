@@ -10,11 +10,14 @@ call plug#begin()
 " Styling
 Plug 'morhetz/gruvbox'                          " Gruvbox theme
 
-" Productivity
+" Increase Productivity
 Plug 'junegunn/fzf'                             " fuzzy search
 Plug 'junegunn/fzf.vim'                         " need both of these
 Plug 'tpope/vim-fugitive'                       " git integration
 Plug 'liuchengxu/vim-which-key'                 " some help with keybinds
+
+" Track Productivity
+Plug 'ActivityWatch/aw-watcher-vim'
 
 " Language specific
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integration
@@ -134,6 +137,8 @@ nmap <leader>gd :Gdiff<CR>
 nmap <leader>gs :G<CR>
 nmap <leader>gmf :diffget //2<CR>
 nmap <leader>gmj :diffget //3<CR>
+
+au VimEnter * call AWStart()
 
 " which-key
 " let g:which_key_fallback_to_native_key = 1
