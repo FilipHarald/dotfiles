@@ -138,8 +138,6 @@ nmap <leader>gs :G<CR>
 nmap <leader>gmf :diffget //2<CR>
 nmap <leader>gmj :diffget //3<CR>
 
-au VimEnter * call AWStart()
-
 " which-key
 " let g:which_key_fallback_to_native_key = 1
 " autocmd VimEnter * let g:which_key_map =  {}
