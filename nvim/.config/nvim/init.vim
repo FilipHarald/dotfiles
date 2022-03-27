@@ -17,7 +17,7 @@ Plug 'tpope/vim-fugitive'                       " git integration
 Plug 'liuchengxu/vim-which-key'                 " some help with keybinds
 
 " Track Productivity
-Plug 'ActivityWatch/aw-watcher-vim'
+Plug 'FilipHarald/aw-watcher-vim'
 
 " Language specific
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integration
@@ -79,7 +79,7 @@ set showcmd
 set updatetime=300
 
 set cursorline                " help with finding cursor
-set scrolloff=5               " some padding when scrolling
+set scrolloff=20              " some padding when scrolling
 
 set wildmode=longest:full
 set wildmenu
@@ -88,59 +88,7 @@ set number relativenumber
 set nu rnu
 set signcolumn=number         " Add signs on top of number column
 
-" ==== DISPLAY
-
 " Gruvbox colorscheme
 set background=dark
 let g:gruvbox_contrast_light='hard'
 colorscheme gruvbox
-
-" ==== TOOLS
-
-" FZF
-function! s:build_quickfix_list(lines)
-  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-  copen
-  cc
-endfunction
-
-let g:fzf_action = {
-  \ 'ctrl-q': function('s:build_quickfix_list'),
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
-let g:fzf_history_dir = '~/.local/share/fzf-history'
-let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.95 } }
-imap <c-x><c-p> <plug>(fzf-complete-path)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
-nmap <leader>f :Files<CR>
-nmap <leader><leader>f :Files %:p:h<CR>
-nmap <leader>s :Rg<CR>
-nmap <leader>h :History<CR>
-nmap <leader>b :Buffers<CR>
-
-nmap <leader>zw :Windows<CR>
-nmap <leader>zhc :History:<CR>
-nmap <leader>zhs :History/<CR>
-nmap <leader>zc :Commands<CR>
-nmap <leader>zm :Maps<CR>
-
-nmap <leader>gf :GFiles<CR>
-nmap <leader>gfd :GFiles?<CR>
-nmap <leader>gcc :Commits<CR>
-nmap <leader>gcb :BCommits<CR>
-
-" fugitive.vim bindings
-nmap <leader>gb :Git blame<CR>
-nmap <leader>gd :Gdiff<CR>
-nmap <leader>gs :G<CR>
-nmap <leader>gmf :diffget //2<CR>
-nmap <leader>gmj :diffget //3<CR>
-
-" which-key
-" let g:which_key_fallback_to_native_key = 1
-" autocmd VimEnter * let g:which_key_map =  {}
-" autocmd VimEnter * call which_key#register('<Space>', "g:which_key_map")
-nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
-vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
