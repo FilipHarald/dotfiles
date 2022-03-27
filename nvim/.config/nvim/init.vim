@@ -8,7 +8,8 @@ endif
 call plug#begin()
 
 " Styling
-Plug 'morhetz/gruvbox'                          " Gruvbox theme
+Plug 'sainnhe/gruvbox-material'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Increase Productivity
 Plug 'junegunn/fzf'                             " fuzzy search
@@ -91,4 +92,4 @@ set signcolumn=number         " Add signs on top of number column
 " Gruvbox colorscheme
 set background=dark
 let g:gruvbox_contrast_light='hard'
-colorscheme gruvbox
+colorscheme gruvbox-material
