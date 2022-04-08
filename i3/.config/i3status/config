@@ -17,6 +17,7 @@ order += "wireless _first_"
 order += "battery all"
 order += "load"
 order += "cpu_temperature all"
+order += "memory"
 order += "disk /"
 order += "tztime local"
 
@@ -44,6 +45,13 @@ load {
 
 cpu_temperature all {
 	format = "%degrees °C"
+}
+
+memory {
+  format = "RAM %percentage_used"
+  threshold_degraded = "5G"
+  threshold_critical = "2G"
+  format_degraded = "RAM LOW %percentage_used"
 }
 
 disk "/" {
