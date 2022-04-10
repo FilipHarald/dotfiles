@@ -44,15 +44,19 @@ const colorize = (str, r, g, b) => {
   return `\\[\u001B[0;38;2;${r};${g};${b}m\\]${str}\\[\x1b[00m\\]`;
 };
 
+// not enough escaping
+// const colorize = (str, r, g, b) => {
+//   return `\u001B[0;38;2;${r};${g};${b}m${str}\x1b[00m`;
+// };
+
 rl.on('line', function(line){
-  const subStrs = line.split(DELIMITER);
-  let res = '';
-  subStrs.forEach((str, index) => {
-    if (!str) return;
-    const parents = subStrs.slice(0, index + 1);
+  const words = line.split(DELIMITER);
+  const coloredWords = words.map((word, index) => {
+    if (!word) return;
+    const parents = words.slice(0, index + 1);
     const color = getColor(parents.join());
-    res += '/' + colorize(str, ...color);
+    return colorize(word, ...color);
   });
-  console.log(res);
+  console.log(coloredWords.join('/'));
 });
 
