@@ -19,6 +19,7 @@ order += "load"
 order += "cpu_temperature all"
 order += "memory"
 order += "disk /"
+order += "tztime swe"
 order += "tztime local"
 
 wireless _first_ {
@@ -37,8 +38,15 @@ battery all {
 }
 
 tztime local {
-	format = "  %A  %Y-%m-%d %H:%M:%S"
+	format = " %Y-%m-%d %H:%M:%S "
 }
+
+tztime swe {
+  format = "SWE: %m-%d %H:%M"
+  timezone = "Europe/Stockholm"
+  hide_if_equals_localtime = true
+}
+
 load {
         format = "%1min"
 }
