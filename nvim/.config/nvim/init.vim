@@ -26,6 +26,7 @@ Plug 'neoclide/coc-json'                        " json
 Plug 'neoclide/coc-tsserver'                    " js
 Plug 'neoclide/coc-eslint'                      " js
 Plug 'fannheyward/coc-styled-components'        " js
+Plug 'rust-lang/rust.vim'                       " Rust
 
 call plug#end()
 
