@@ -29,13 +29,13 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 " nmap <leader>cs :CocStart<CR>
 
 " Use `<leader>cd` to get all diagnostics of current buffer in location list.
-nmap <leader>cd :CocDiagnostics<CR>
+nmap <leader>cdi :CocDiagnostics<CR>
 
 " Format current buffer
 nmap <leader>cf :call CocAction('format')<CR>
 
 " Get suggestions to fix warnings and errors on current line
-nmap <leader>ca <Plug>(coc-codeaction-line)
+nmap <leader>ca <Plug>(coc-codeaction-cursor)
 
 " Rename a symbol
 nmap <leader>cr <Plug>(coc-rename)
