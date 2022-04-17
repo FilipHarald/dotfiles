@@ -2,18 +2,18 @@ shopt -s histappend
 export HISTFILESIZE=
 export HISTSIZE=
 
-myfunc() {
-  if [[ -x $(realpath "/home/filip/bin/rstrt") ]]
+promptFunc() {
+  if [[ -x $(realpath "$HOME/bin/rstrt") ]]
   # if type -P node > /dev/null && [[ -x $(realpath "/home/filip/bin/color-path.js") ]]
   then
-    WD=`pwd | ~/bin/rstrt`
-    THE_DIR=`echo "${WD}" | awk -F/ '{print $NF}'`
-    PS1="\`echo -e \"\[\a\]\[\033[01;32m\]\h\[\033[01;34m\] ${THE_DIR} \$ \"\`"
+    WD=`pwd | $HOME/bin/rstrt`
+    COLORIZED_DIR=`echo "${WD}" | awk -F/ '{print $NF}'`
+    PS1="\`echo -e \"\[\a\]\[\033[01;32m\]\h\[\033[01;34m\] ${COLORIZED_DIR} \$ \"\`"
   else
     PS1='\[\a\]\[\033[01;32m\]\h\[\033[01;34m\] \W \$ \[\033[00m\]'
   fi
 }
-PROMPT_COMMAND="myfunc"
+PROMPT_COMMAND="promptFunc"
 
 # Some random background colors for every new terminal
 echo -ne "\e]11;$(printf '#%02x%02x%02x\n' $[RANDOM%50] $[RANDOM%50] $[RANDOM%50])\a"
