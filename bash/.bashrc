@@ -3,9 +3,10 @@ export HISTFILESIZE=
 export HISTSIZE=
 
 myfunc() {
-  if type -P node > /dev/null && [[ -x $(realpath "/home/filip/bin/color-path.js") ]]
+  if [[ -x $(realpath "/home/filip/bin/rstrt") ]]
+  # if type -P node > /dev/null && [[ -x $(realpath "/home/filip/bin/color-path.js") ]]
   then
-    WD=`pwd | ~/bin/color-path.js`
+    WD=`pwd | ~/bin/rstrt`
     THE_DIR=`echo "${WD}" | awk -F/ '{print $NF}'`
     PS1="\`echo -e \"\[\a\]\[\033[01;32m\]\h\[\033[01;34m\] ${THE_DIR} \$ \"\`"
   else
