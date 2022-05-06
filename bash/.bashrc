@@ -4,7 +4,6 @@ export HISTSIZE=
 
 promptFunc() {
   if [[ -x $(realpath "$HOME/bin/rstrt") ]]
-  # if type -P node > /dev/null && [[ -x $(realpath "/home/filip/bin/color-path.js") ]]
   then
     WD=`pwd | $HOME/bin/rstrt`
     COLORIZED_DIR=`echo "${WD}" | awk -F/ '{print $NF}'`
@@ -19,8 +18,6 @@ PROMPT_COMMAND="promptFunc"
 echo -ne "\e]11;$(printf '#%02x%02x%02x\n' $[RANDOM%50] $[RANDOM%50] $[RANDOM%50])\a"
 
 export TERM=xterm-256color
-
-set -o vi
 
 # Aliases
 alias ls='ls --color'

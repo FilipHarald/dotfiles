@@ -1,5 +1,5 @@
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-let g:fzf_layout = { 'window': { 'width': 1, 'height': 1 } }
+let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.99, 'yoffset': -1.0} }
 
 function! s:build_quickfix_list(lines)
   call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
