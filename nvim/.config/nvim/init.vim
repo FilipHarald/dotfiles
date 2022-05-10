@@ -18,7 +18,7 @@ Plug 'tpope/vim-fugitive'                       " git integration
 Plug 'liuchengxu/vim-which-key'                 " some help with keybinds
 
 " Track Productivity
-Plug 'FilipHarald/aw-watcher-vim'
+Plug 'ActivityWatch/aw-watcher-vim'
 
 " Language specific
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integration
