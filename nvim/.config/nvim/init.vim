@@ -9,16 +9,21 @@ call plug#begin()
 
 " Styling
 Plug 'sainnhe/gruvbox-material'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-" Increase Productivity
+" Increase productivity
 Plug 'junegunn/fzf'                             " fuzzy search
 Plug 'junegunn/fzf.vim'                         " need both of these
 Plug 'tpope/vim-fugitive'                       " git integration
+Plug 'tpope/vim-unimpaired'                     " some good keybinds
+
+" Miscellaneous
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'liuchengxu/vim-which-key'                 " some help with keybinds
 
-" Track Productivity
-Plug 'ActivityWatch/aw-watcher-vim'
+" Track what I work with
+" Plug 'ActivityWatch/aw-watcher-vim'
+Plug 'FilipHarald/aw-watcher-vim'
+" Plug '~/code/aw-watcher-vim'
 
 " Language specific
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integration

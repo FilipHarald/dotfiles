@@ -52,16 +52,14 @@ nmap <leader>cgr <Plug>(coc-references)
 nmap <silent>[g <Plug>(coc-diagnostic-prev)
 nmap <silent>]g <Plug>(coc-diagnostic-next)
 
-" Use cdoc to show documentation in preview window.
-nnoremap <leader>cdoc :call <SID>show_documentation()<CR>
+" Use <leader>cdoc to show documentation in preview window.
+nnoremap <leader>cdoc :call ShowDocumentation()<CR>
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call cocActionAsync('doHover')
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
   else
-    execute '!' . &keywordprg . " " . expand('<cword>')
+    call feedkeys('K', 'in')
   endif
 endfunction
 
