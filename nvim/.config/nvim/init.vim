@@ -15,6 +15,7 @@ Plug 'junegunn/fzf'                             " fuzzy search
 Plug 'junegunn/fzf.vim'                         " need both of these
 Plug 'tpope/vim-fugitive'                       " git integration
 Plug 'tpope/vim-unimpaired'                     " some good keybinds
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integratinon
 
 " Miscellaneous
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -25,15 +26,9 @@ Plug 'liuchengxu/vim-which-key'                 " some help with keybinds
 Plug 'FilipHarald/aw-watcher-vim'
 " Plug '~/code/aw-watcher-vim'
 
-" Language specific
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integration
-Plug 'neoclide/coc-json'                        " json
-Plug 'neoclide/coc-tsserver'                    " js
-Plug 'neoclide/coc-eslint'                      " js
-Plug 'fannheyward/coc-styled-components'        " js
-Plug 'rust-lang/rust.vim'                       " Rust
-
 call plug#end()
+
+let g:coc_global_extensions = [ 'coc-json', 'coc-git', 'coc-tsserver', 'coc-eslint', 'coc-styled-components', 'coc-rust-analyzer' ]
 
 " Disable arrow-keys
 noremap <Up> <NOP>
@@ -83,7 +78,7 @@ set listchars+=nbsp:⣿
 
 " miscellaneous
 set showcmd
-set updatetime=300
+set updatetime=300            " improves responsiveness for coc.nvim, amongst other things
 
 set cursorline                " help with finding cursor
 set scrolloff=20              " some padding when scrolling
