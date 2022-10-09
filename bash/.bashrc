@@ -28,10 +28,6 @@ alias gcm='git checkout master'
 alias gpm='git pull origin master'
 alias ydir='cd ~/code/yggio'
 
-# functions
-ll() {
-  ls --color=never -d $PWD/* | /home/filip/bin/color-path.js
-}
 function gcb() {
   git checkout -b "$@" && \
   git push --set-upstream origin "$@" && \
@@ -91,11 +87,6 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# BEGIN ANSIBLE MANAGED BLOCK
-export PATH=:~/bin:$HOME/istio/bin:$PATH
-export KUBECONFIG=$HOME/.kube/config:/home/filip/code/dev-ops/kubeconfigs/kube_config_kna.yml:/home/filip/code/dev-ops/kubeconfigs/kube_config_sto.yml:$KUBECONFIG
-# END ANSIBLE MANAGED BLOCK
 
 # This is taken from Ubuntu default
 if ! shopt -oq posix; then

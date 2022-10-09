@@ -19,16 +19,20 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integratinon
 
 " Miscellaneous
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'liuchengxu/vim-which-key'                 " some help with keybinds
 
 " Track what I work with
 " Plug 'ActivityWatch/aw-watcher-vim'
-Plug 'FilipHarald/aw-watcher-vim'
+" Plug 'FilipHarald/aw-watcher-vim'
 " Plug '~/code/aw-watcher-vim'
 
 call plug#end()
 
-let g:coc_global_extensions = [ 'coc-json', 'coc-git', 'coc-tsserver', 'coc-eslint', 'coc-styled-components', 'coc-rust-analyzer' ]
+let g:coc_global_extensions = [ 'coc-json', 'coc-git', 'coc-tsserver', 'coc-eslint', 'coc-styled-components', 'coc-rust-analyzer', 'coc-prettier' ]
+
+" Use space as <leader> key
+let mapleader = " "
 
 " Disable arrow-keys
 noremap <Up> <NOP>
@@ -42,12 +46,13 @@ inoremap <Right> <NOP>
 
 " Y wil now act as C and D
 noremap Y y$
-
-" Use space as <leader> key
-let mapleader = " "
+vnoremap <leader>p "_dP
 
 " integrate with system clipboard
 set clipboard+=unnamedplus
+
+" turn off mouse
+set mouse=
 
 " netrw
 let g:netrw_liststyle = 3
@@ -87,8 +92,7 @@ set wildmode=longest:full
 set wildmenu
 
 set number relativenumber
-set nu rnu
-set signcolumn=number         " Add signs on top of number column
+set signcolumn=number
 
 " Gruvbox colorscheme
 set background=dark
