@@ -27,6 +27,9 @@ Plug 'liuchengxu/vim-which-key'                 " some help with keybinds
 " Plug 'FilipHarald/aw-watcher-vim'
 " Plug '~/code/aw-watcher-vim'
 
+" vim for everything?
+Plug 'jrop/mongo.nvim'
+
 call plug#end()
 
 let g:coc_global_extensions = [ 'coc-json', 'coc-git', 'coc-tsserver', 'coc-eslint', 'coc-styled-components', 'coc-rust-analyzer', 'coc-prettier' ]
