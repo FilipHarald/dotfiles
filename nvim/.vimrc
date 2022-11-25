@@ -1,9 +1,6 @@
 " Use space as <leader> key
 let mapleader = " "
 
-" netrw
-let g:netrw_liststyle = 3
-
 " search
 set hlsearch	     " Highlight all search results
 set smartcase	     " Enable smart-case search
@@ -27,3 +24,5 @@ set wildmenu
 
 set number relativenumber
 set nu rnu
+
+hi MatchParen cterm=none ctermbg=green ctermfg=blue

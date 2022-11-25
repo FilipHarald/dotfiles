@@ -16,11 +16,13 @@ Plug 'junegunn/fzf.vim'                         " need both of these
 Plug 'tpope/vim-fugitive'                       " git integration
 Plug 'tpope/vim-unimpaired'                     " some good keybinds
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integratinon
+Plug 'nat-418/boole.nvim'                       " cycle more than just nbrs
 
 " Miscellaneous
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'liuchengxu/vim-which-key'                 " some help with keybinds
+Plug 'p00f/nvim-ts-rainbow'                     " easier to see matching parentheses
 
 " Track what I work with
 " Plug 'ActivityWatch/aw-watcher-vim'
@@ -101,3 +103,6 @@ set signcolumn=number
 set background=dark
 let g:gruvbox_contrast_light='hard'
 colorscheme gruvbox-material
+
+" better matching brackets
+hi MatchParen cterm=none ctermbg=green ctermfg=blue
