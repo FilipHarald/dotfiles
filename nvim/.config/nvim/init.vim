@@ -15,8 +15,10 @@ Plug 'junegunn/fzf'                             " fuzzy search
 Plug 'junegunn/fzf.vim'                         " need both of these
 Plug 'tpope/vim-fugitive'                       " git integration
 Plug 'tpope/vim-unimpaired'                     " some good keybinds
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integratinon
 Plug 'nat-418/boole.nvim'                       " cycle more than just nbrs
+
+" language-specific and LSP-stuff
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integratinon
 
 " Miscellaneous
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -105,4 +107,4 @@ let g:gruvbox_contrast_light='hard'
 colorscheme gruvbox-material
 
 " better matching brackets
-hi MatchParen cterm=none ctermbg=green ctermfg=blue
+hi MatchParen cterm=none ctermbg=red ctermfg=white
