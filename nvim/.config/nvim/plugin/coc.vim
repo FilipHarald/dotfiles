@@ -52,9 +52,16 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nmap <leader>crn <Plug>(coc-rename)
 
+" refactor
+nmap <leader>crf <Plug>(coc-refactor)
+
 " Formatting selected code.
-xmap <leader>cf  <Plug>(coc-format-selected)
-nmap <leader>cf  <Plug>(coc-format-selected)
+xmap <leader>cfs  <Plug>(coc-format-selected)
+nmap <leader>cfs  <Plug>(coc-format-selected)
+
+" Formatting buffer
+xmap <leader>cfb  <Plug>(coc-format)
+nmap <leader>cfb  <Plug>(coc-format)
 
 augroup mygroup
   autocmd!
@@ -66,11 +73,11 @@ augroup end
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
-xmap <leader>ca  <Plug>(coc-codeaction-selected)
-nmap <leader>ca  <Plug>(coc-codeaction-selected)
+xmap <leader>cas  <Plug>(coc-codeaction-selected)
+nmap <leader>cas  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
-nmap <leader>cac  <Plug>(coc-codeaction)
+nmap <leader>caa  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>cqf  <Plug>(coc-fix-current)
 
