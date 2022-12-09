@@ -71,10 +71,11 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
+" codeaction cursor
+nmap <leader>cac  <Plug>(coc-codeaction-cursor)
+
 " Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
 xmap <leader>cas  <Plug>(coc-codeaction-selected)
-nmap <leader>cas  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
 nmap <leader>caa  <Plug>(coc-codeaction)
