@@ -41,16 +41,6 @@ let g:coc_global_extensions = [ 'coc-json', 'coc-git', 'coc-tsserver', 'coc-esli
 " Use space as <leader> key
 let mapleader = " "
 
-" Disable arrow-keys
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-
 " Y wil now act as C and D
 noremap Y y$
 vnoremap <leader>p "_dP
