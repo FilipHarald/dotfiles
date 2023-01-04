@@ -19,6 +19,7 @@ Plug 'nat-418/boole.nvim'                       " cycle more than just nbrs
 
 " language-specific and LSP-stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integratinon
+Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh' }
 
 " Miscellaneous
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -36,7 +37,10 @@ Plug 'jrop/mongo.nvim'
 
 call plug#end()
 
-let g:coc_global_extensions = [ 'coc-json', 'coc-git', 'coc-tsserver', 'coc-eslint', 'coc-styled-components', 'coc-rust-analyzer', 'coc-prettier' ]
+let g:coc_global_extensions = [ 'coc-json', 'coc-git', 'coc-tsserver', 'coc-eslint', 'coc-styled-components', 'coc-rust-analyzer', 'coc-prettier', '@yaegassy/coc-ansible' ]
+let g:coc_filetype_map = {
+  \ 'yaml.ansible': 'ansible',
+  \ }
 
 " Use space as <leader> key
 let mapleader = " "
@@ -98,3 +102,17 @@ colorscheme gruvbox-material
 
 " better matching brackets
 hi MatchParen cterm=none ctermbg=red ctermfg=white
+
+" recursive create folder on save
+function s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+        let dir=fnamemodify(a:file, ':h')
+        if !isdirectory(dir)
+            call mkdir(dir, 'p')
+        endif
+    endif
+endfunction
+augroup BWCCreateDir
+    autocmd!
+    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END

@@ -96,3 +96,4 @@ if ! shopt -oq posix; then
   fi
 fi
 . "$HOME/.cargo/env"
+PATH="$HOME/.local/bin:$PATH"

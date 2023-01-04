@@ -16,7 +16,7 @@ imap <c-x><c-p> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " special for relative search
-nmap <leader><leader>f :Files %:p:h
+nmap <leader><leader>f :call fzf#vim#files('.', {'options':'--query '.expand('%:h')})<CR>
 
 nmap <leader>f :Files<CR>
 nmap <leader>s :Rg<CR>
