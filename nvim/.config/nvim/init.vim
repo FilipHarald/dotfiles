@@ -15,7 +15,9 @@ Plug 'junegunn/fzf'                             " fuzzy search
 Plug 'junegunn/fzf.vim'                         " need both of these
 Plug 'tpope/vim-fugitive'                       " git integration
 Plug 'tpope/vim-unimpaired'                     " some good keybinds
+Plug 'tpope/vim-vinegar'                        " improves netrw
 Plug 'nat-418/boole.nvim'                       " cycle more than just nbrs
+Plug 'mbbill/undotree'                          " more powerful undo
 
 " language-specific and LSP-stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integratinon
@@ -44,6 +46,17 @@ let g:coc_filetype_map = {
 
 " Use space as <leader> key
 let mapleader = " "
+
+" persistent undo
+if has("persistent_undo")
+   let target_path = expand('~/.vim-undo')
+    if !isdirectory(target_path)
+        call mkdir(target_path, "p", 0700)
+    endif
+
+    let &undodir=target_path
+    set undofile
+endif
 
 " Y wil now act as C and D
 noremap Y y$
