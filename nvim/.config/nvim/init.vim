@@ -37,7 +37,7 @@ Plug 'jrop/mongo.nvim'
 
 call plug#end()
 
-let g:coc_global_extensions = [ 'coc-json', 'coc-git', 'coc-tsserver', 'coc-eslint', 'coc-styled-components', 'coc-rust-analyzer', 'coc-prettier', '@yaegassy/coc-ansible' ]
+let g:coc_global_extensions = [ 'coc-json', 'coc-git', 'coc-tsserver', 'coc-eslint', 'coc-styled-components', 'coc-rust-analyzer', 'coc-prettier', '@yaegassy/coc-ansible', 'coc-docker' ]
 let g:coc_filetype_map = {
   \ 'yaml.ansible': 'ansible',
   \ }
