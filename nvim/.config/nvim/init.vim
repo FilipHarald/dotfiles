@@ -16,8 +16,9 @@ Plug 'junegunn/fzf.vim'                         " need both of these
 Plug 'tpope/vim-fugitive'                       " git integration
 Plug 'tpope/vim-unimpaired'                     " some good keybinds
 Plug 'tpope/vim-vinegar'                        " improves netrw
+Plug 'tpope/vim-rhubarb'                        " improves Github-integration
+Plug 'cedarbaum/fugitive-azure-devops.vim'      " improves Github-integration
 Plug 'nat-418/boole.nvim'                       " cycle more than just nbrs
-Plug 'mbbill/undotree'                          " more powerful undo
 
 " language-specific and LSP-stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integratinon
@@ -28,6 +29,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'liuchengxu/vim-which-key'                 " some help with keybinds
 Plug 'p00f/nvim-ts-rainbow'                     " easier to see matching parentheses
+Plug 'mbbill/undotree'                          " more powerful undo
 
 " Track what I work with
 " Plug 'ActivityWatch/aw-watcher-vim'
