@@ -22,6 +22,7 @@ Plug 'nat-418/boole.nvim'                       " cycle more than just nbrs
 
 " language-specific and LSP-stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integratinon
+Plug 'antoinemadec/coc-fzf'
 Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh' }
 
 " Miscellaneous

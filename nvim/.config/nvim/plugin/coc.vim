@@ -25,7 +25,6 @@ else
 endif
 
 " Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
@@ -129,20 +128,3 @@ command! -nargs=0 OR :call CocActionAsync('runCommand', 'editor.action.organizeI
 " provide custom statusline: lightline.vim, vim-airline.
 " set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" Mappings for CoCList
-" Show all diagnostics.
-nnoremap <leader>cla  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <leader>cle  :<C-u>CocList extensions<cr>
-" Show commands.
-nnoremap <leader>clc  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <leader>clo  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-nnoremap <leader>cls  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <leader>clj  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <leader>clk  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <leader>clp  :<C-u>CocListResume<CR>
