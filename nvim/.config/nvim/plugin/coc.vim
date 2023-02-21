@@ -29,6 +29,9 @@ endif
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
+" show diagnostic in seperate tab (window?)
+nmap <leader>cdt :call CocAction('diagnosticPreview', 'tab drop')<CR>
+
 " GoTo code navigation.
 nmap <leader>cgd <Plug>(coc-definition)
 nmap <leader>cgt :call CocAction('jumpDefinition', 'tab drop')<CR>
