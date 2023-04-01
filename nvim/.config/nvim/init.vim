@@ -112,8 +112,12 @@ set number relativenumber
 set signcolumn=number
 
 " Gruvbox colorscheme
+if has('termguicolors')
+  set termguicolors
+endif
 set background=dark
-let g:gruvbox_contrast_light='hard'
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_foreground = 'original'
 colorscheme gruvbox-material
 
 " better matching brackets

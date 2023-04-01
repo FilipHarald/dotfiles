@@ -1,3 +1,6 @@
+let cwd = getcwd()
+let $FZF_DEFAULT_COMMAND =  'find '.cwd.' -type f | rstrt'
+let $FZF_DEFAULT_OPTS = '--ansi'
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.99, 'yoffset': -1.0} }
 
@@ -15,8 +18,17 @@ let g:fzf_action = {
 imap <c-x><c-p> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
-" special for relative search
-nmap <leader><leader>f :call fzf#vim#files('.', {'options':'--query '.expand('%:h')})<CR>
+
+function! s:fzf_neighbouring_files()
+  let current_file =expand("%")
+  let cwd = fnamemodify(current_file, ':h')
+  call fzf#vim#files('.', fzf#vim#with_preview({
+      \ 'options':'--query ' . cwd
+  \}))
+endfunction
+command! FZFNeigh call s:fzf_neighbouring_files()
+nmap <leader><leader>f :FZFNeigh<CR>
+
 
 nmap <leader>f :Files<CR>
 nmap <leader>s :Rg<CR>
@@ -32,6 +44,5 @@ nmap <leader>zm :Maps<CR>
 
 " depends on fugitive.vim
 nmap <leader>gf :GFiles<CR>
-nmap <leader>gfd :GFiles?<CR>
-nmap <leader>gcc :Commits<CR>
-nmap <leader>gcb :BCommits<CR>
+nmap <leader>gz :GFiles?<CR>
+nmap <leader>gh :BCommits<CR>
