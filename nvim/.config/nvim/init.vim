@@ -19,6 +19,7 @@ Plug 'tpope/vim-vinegar'                        " improves netrw
 Plug 'tpope/vim-rhubarb'                        " improves Github-integration
 Plug 'cedarbaum/fugitive-azure-devops.vim'      " improves Github-integration
 Plug 'nat-418/boole.nvim'                       " cycle more than just nbrs
+Plug 'github/copilot.vim'
 
 " language-specific and LSP-stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integratinon
@@ -42,7 +43,7 @@ Plug 'jrop/mongo.nvim'
 
 call plug#end()
 
-let g:coc_global_extensions = [ 'coc-json', 'coc-git', 'coc-tsserver', 'coc-eslint', 'coc-styled-components', 'coc-rust-analyzer', 'coc-prettier', '@yaegassy/coc-ansible', 'coc-docker' ]
+let g:coc_global_extensions = [ 'coc-json', 'coc-git', 'coc-tsserver', 'coc-eslint', 'coc-styled-components', 'coc-rust-analyzer', 'coc-prettier', '@yaegassy/coc-ansible', 'coc-docker', 'coc-sumneko-lua' ]
 let g:coc_filetype_map = {
   \ 'yaml.ansible': 'ansible',
   \ }
