@@ -25,6 +25,7 @@ Plug 'github/copilot.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integratinon
 Plug 'antoinemadec/coc-fzf'
 Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh' }
+Plug 'iden3/vim-circom-syntax'
 
 " Miscellaneous
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

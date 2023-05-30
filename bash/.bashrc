@@ -80,7 +80,9 @@ NPM_PACKAGES="${HOME}/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+[ -f  /usr/share/doc/fzf/examples/key-bindings.bash ] && source /usr/share/doc/fzf/examples/key-bindings.bash
+[ -f  /usr/share/doc/fzf/examples/completion.bash ] && source /usr/share/doc/fzf/examples/completion.bash
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -97,3 +99,4 @@ if ! shopt -oq posix; then
 fi
 . "$HOME/.cargo/env"
 PATH="$HOME/.local/bin:$PATH"
+source <(kubectl completion bash)
