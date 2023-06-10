@@ -1,4 +1,8 @@
 {
   "diagnostic.virtualText": true,
-  "diagnostic.virtualTextCurrentLineOnly": false
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "sumneko-lua.enableNvimLuaDev": true,
+  "Lua.workspace.library": [
+    "${3rd}/luv/library"
+  ]
 }
