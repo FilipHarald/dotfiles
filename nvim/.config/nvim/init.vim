@@ -25,6 +25,7 @@ Plug 'github/copilot.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integratinon
 Plug 'antoinemadec/coc-fzf'
 Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh' }
+Plug 'iden3/vim-circom-syntax'
 
 " Miscellaneous
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -106,7 +107,7 @@ set showcmd
 set updatetime=300            " improves responsiveness for coc.nvim, amongst other things
 
 set cursorline                " help with finding cursor
-set scrolloff=20              " some padding when scrolling
+set scrolloff=5               " some padding when scrolling
 
 set wildmode=longest:full
 set wildmenu
