@@ -32,6 +32,8 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'liuchengxu/vim-which-key'                 " some help with keybinds
 Plug 'p00f/nvim-ts-rainbow'                     " easier to see matching parentheses
 Plug 'mbbill/undotree'                          " more powerful undo
+Plug 'FilipHarald/rstrt.nvim'                   " color current file winbar
+" Plug '~/code/priv/rstrt.nvim'                   " color current file winbar
 
 " Track what I work with
 " Plug 'ActivityWatch/aw-watcher-vim'
