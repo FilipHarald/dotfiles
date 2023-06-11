@@ -2,3 +2,5 @@
       email = filip.harald@gmail.com
 [blame]
       date = short
+[pull]
+	rebase = false
