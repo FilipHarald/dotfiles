@@ -119,7 +119,7 @@ set signcolumn=number
 if has('termguicolors')
   set termguicolors
 endif
-set background=dark
+set background=light
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_foreground = 'original'
 colorscheme gruvbox-material

@@ -14,9 +14,6 @@ promptFunc() {
 }
 PROMPT_COMMAND="promptFunc"
 
-# Some random background colors for every new terminal
-echo -ne "\e]11;$(printf '#%02x%02x%02x\n' $[RANDOM%50] $[RANDOM%50] $[RANDOM%50])\a"
-
 export TERM=xterm-256color
 
 # Aliases
