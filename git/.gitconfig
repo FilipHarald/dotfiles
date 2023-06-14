@@ -3,4 +3,6 @@
 [blame]
       date = short
 [pull]
-	rebase = false
+      rebase = false
+[merge]
+      conflictstyle = diff3
