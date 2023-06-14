@@ -1,5 +1,4 @@
-let cwd = getcwd()
-let $FZF_DEFAULT_COMMAND =  'find '.cwd.' -type f | rstrt'
+let $FZF_DEFAULT_COMMAND =  'fdfind --hidden --absolute-path --color never --exclude .git --type f | rstrt'
 let $FZF_DEFAULT_OPTS = '--ansi --color hl:reverse:-1,hl+:reverse:-1'
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.99, 'yoffset': -1.0} }
