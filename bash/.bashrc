@@ -60,6 +60,7 @@ function rei3cont() {
 # shell vars
 export EDITOR=vim
 export PATH=$PATH:/usr/local/bin/
+export BAT_THEME="gruvbox-light"
 
 if [ -n "$DESKTOP_SESSION" ];then
   eval $(gnome-keyring-daemon --start)
@@ -89,6 +90,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:${HOME}/go/bin
 
 . "$HOME/.cargo/env"
@@ -103,3 +105,9 @@ if ! shopt -oq posix; then
 fi
 
 source <(kubectl completion bash)
+
+export NARGO_HOME="/home/filip/.nargo"
+
+export PATH="$PATH:$NARGO_HOME/bin"
+
+export PATH="$PATH:/home/filip/.foundry/bin"
