@@ -26,14 +26,16 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integratinon
 Plug 'antoinemadec/coc-fzf'
 Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh' }
 Plug 'iden3/vim-circom-syntax'
+Plug 'Louis-Amas/noir-vim-support'
 
 " Miscellaneous
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-context'
-Plug 'liuchengxu/vim-which-key'                 " some help with keybinds
+Plug 'haringsrob/nvim_context_vt'
+Plug 'echasnovski/mini.clue'                    " some help with keybinds
 Plug 'p00f/nvim-ts-rainbow'                     " easier to see matching parentheses
 Plug 'mbbill/undotree'                          " more powerful undo
-Plug 'FilipHarald/rstrt.nvim'                   " color current file winbar
+" Plug 'FilipHarald/rstrt.nvim'                   " color current file winbar
 " Plug '~/code/priv/rstrt.nvim'                   " color current file winbar
 
 " Track what I work with
@@ -46,7 +48,7 @@ Plug 'jrop/mongo.nvim'
 
 call plug#end()
 
-let g:coc_global_extensions = [ 'coc-json', 'coc-git', 'coc-tsserver', 'coc-eslint', 'coc-styled-components', 'coc-rust-analyzer', 'coc-prettier', '@yaegassy/coc-ansible', 'coc-docker', 'coc-sumneko-lua' ]
+let g:coc_global_extensions = [ 'coc-json', 'coc-git', 'coc-tsserver', 'coc-eslint', 'coc-styled-components', 'coc-rust-analyzer', 'coc-prettier', '@yaegassy/coc-ansible', 'coc-docker', 'coc-sumneko-lua', 'coc-emoji', '@yaegassy/coc-tailwindcss3', 'coc-solidity' ]
 let g:coc_filetype_map = {
   \ 'yaml.ansible': 'ansible',
   \ }
