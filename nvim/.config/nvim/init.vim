@@ -17,7 +17,6 @@ Plug 'tpope/vim-fugitive'                       " git integration
 Plug 'tpope/vim-unimpaired'                     " some good keybinds
 Plug 'tpope/vim-vinegar'                        " improves netrw
 Plug 'tpope/vim-rhubarb'                        " improves Github-integration
-Plug 'cedarbaum/fugitive-azure-devops.vim'      " improves Github-integration
 Plug 'nat-418/boole.nvim'                       " cycle more than just nbrs
 Plug 'github/copilot.vim'
 
@@ -27,6 +26,7 @@ Plug 'antoinemadec/coc-fzf'
 Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh' }
 Plug 'iden3/vim-circom-syntax'
 Plug 'Louis-Amas/noir-vim-support'
+Plug 'epwalsh/obsidian.nvim'                    " obsidian syntax
 
 " Miscellaneous
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -35,6 +35,7 @@ Plug 'haringsrob/nvim_context_vt'
 Plug 'echasnovski/mini.clue'                    " some help with keybinds
 Plug 'p00f/nvim-ts-rainbow'                     " easier to see matching parentheses
 Plug 'mbbill/undotree'                          " more powerful undo
+Plug 'nvim-lua/plenary.nvim'                    " required for some plugins
 " Plug 'FilipHarald/rstrt.nvim'                   " color current file winbar
 " Plug '~/code/priv/rstrt.nvim'                   " color current file winbar
 
