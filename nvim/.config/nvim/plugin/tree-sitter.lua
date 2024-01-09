@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "solidity", "typescript", "javascript", "lua", "rust", "python", "markdown", "markdown_inline" },
+  ensure_installed = { "solidity", "typescript", "javascript", "lua", "rust", "python", "markdown", "markdown_inline", "bash" },
 
   -- Install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
