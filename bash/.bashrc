@@ -69,9 +69,6 @@ fi
 
 # yarn global without sudo
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-if [ -f /home/filip/code/yggio/tools/dev-scripts/yggiorc.sh ]; then
-  source /home/filip/code/yggio/tools/dev-scripts/yggiorc.sh
-fi
 
 # npm global without sudo
 NPM_PACKAGES="${HOME}/.npm-packages"
