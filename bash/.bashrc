@@ -23,6 +23,7 @@ alias gp='git pull'
 alias gd='git diff'
 alias gcm='git checkout master'
 alias gpm='git pull origin master'
+alias dpsa='docker ps -a --format "table {{.Names}}\t{{.RunningFor}}\t{{.Status}}\t{{.Ports}}"'
 
 function gcb() {
   git checkout -b "$@" && \
