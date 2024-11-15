@@ -20,6 +20,10 @@ Plug 'tpope/vim-rhubarb'                        " improves Github-integration
 Plug 'nat-418/boole.nvim'                       " cycle more than just nbrs
 Plug 'github/copilot.vim'
 
+" AI
+" Plug 'pasky/claude.vim'
+Plug 'ErikBjare/gptme', { 'rtp': 'scripts/vim' }
+
 " language-specific and LSP-stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integratinon
 Plug 'antoinemadec/coc-fzf'
