@@ -9,10 +9,6 @@ require("obsidian").setup({
     },
   },
 
-  -- Optional, set to true to use the current directory as a vault; otherwise,
-  -- the first workspace is opened by default
-  detect_cwd = false,
-
   -- Optional, if you keep notes in a specific subdirectory of your vault.
   notes_subdir = "notes",
 
@@ -37,14 +33,6 @@ require("obsidian").setup({
     nvim_cmp = false,
     -- Trigger completion at 2 chars
     min_chars = 2,
-    -- Where to put new notes created from completion. Valid options are
-    --  * "current_dir" - put new notes in same directory as the current buffer.
-    --  * "notes_subdir" - put new notes in the default notes subdirectory.
-    new_notes_location = "current_dir",
-
-    -- Whether to add the output of the node_id_func to new notes in autocompletion.
-    -- E.g. "[[Foo" completes to "[[foo|Foo]]" assuming "foo" is the ID of the note.
-    prepend_note_id = true
   },
 
   -- Optional, key mappings.
@@ -100,14 +88,6 @@ require("obsidian").setup({
     time_format = "%H:%M",
     -- A map for custom variables, the key should be the variable and the value a function
     substitutions = {}
-  },
-
-  -- Optional, customize the backlinks interface.
-  backlinks = {
-    -- The default height of the backlinks pane.
-    height = 10,
-    -- Whether or not to wrap lines.
-    wrap = true,
   },
 
   -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
