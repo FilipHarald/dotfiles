@@ -63,11 +63,6 @@ export EDITOR=vim
 export PATH=$PATH:/usr/local/bin/
 export BAT_THEME="gruvbox-light"
 
-if [ -n "$DESKTOP_SESSION" ];then
-  eval $(gnome-keyring-daemon --start)
-  export SSH_AUTH_SOCK
-fi
-
 # yarn global without sudo
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
