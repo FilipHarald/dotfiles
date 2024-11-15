@@ -99,9 +99,5 @@ fi
 
 source <(kubectl completion bash)
 
-export NARGO_HOME="/home/filip/.nargo"
-
-export PATH="$PATH:$NARGO_HOME/bin"
-
 export PATH="$PATH:/home/filip/.foundry/bin"
 export PATH=$PATH:/home/filip/.aztec/bin

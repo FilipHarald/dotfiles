@@ -29,7 +29,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integratinon
 Plug 'antoinemadec/coc-fzf'
 Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh' }
 Plug 'iden3/vim-circom-syntax'
-Plug 'Louis-Amas/noir-vim-support'
+Plug 'FilipHarald/noir-nvim'
 Plug 'epwalsh/obsidian.nvim'                    " obsidian syntax
 
 " Miscellaneous
