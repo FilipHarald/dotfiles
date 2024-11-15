@@ -11,7 +11,7 @@ call plug#begin()
 Plug 'sainnhe/gruvbox-material'
 
 " Increase productivity
-Plug 'junegunn/fzf'                             " fuzzy search
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fuzzy search
 Plug 'junegunn/fzf.vim'                         " need both of these
 Plug 'tpope/vim-fugitive'                       " git integration
 Plug 'tpope/vim-unimpaired'                     " some good keybinds
@@ -37,7 +37,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'haringsrob/nvim_context_vt'
 Plug 'echasnovski/mini.clue'                    " some help with keybinds
-Plug 'p00f/nvim-ts-rainbow'                     " easier to see matching parentheses
 Plug 'mbbill/undotree'                          " more powerful undo
 Plug 'nvim-lua/plenary.nvim'                    " required for some plugins
 " Plug 'FilipHarald/rstrt.nvim'                   " color current file winbar
@@ -53,7 +52,7 @@ Plug 'jrop/mongo.nvim'
 
 call plug#end()
 
-let g:coc_global_extensions = [ 'coc-json', 'coc-git', 'coc-tsserver', 'coc-eslint', 'coc-styled-components', 'coc-rust-analyzer', 'coc-prettier', '@yaegassy/coc-ansible', 'coc-docker', 'coc-sumneko-lua', 'coc-emoji', '@yaegassy/coc-tailwindcss3', 'coc-solidity' ]
+let g:coc_global_extensions = [ 'coc-json', 'coc-git', 'coc-tsserver', 'coc-eslint', 'coc-rust-analyzer', 'coc-prettier', '@yaegassy/coc-ansible', 'coc-docker', 'coc-sumneko-lua', 'coc-emoji', '@yaegassy/coc-tailwindcss3', 'coc-solidity' ]
 let g:coc_filetype_map = {
   \ 'yaml.ansible': 'ansible',
   \ }

@@ -14,6 +14,16 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-v': 'vsplit' }
 
+  command! -bang -nargs=* RgDotfiles
+    \ call fzf#vim#grep(
+    \   'rg --column --line-number --no-heading --color=always --smart-case --hidden -g !**/yarn.lock '.shellescape(<q-args>), 1,
+    \   fzf#vim#with_preview(), <bang>0)
+
+  command! -bang -nargs=* RgAll
+    \ call fzf#vim#grep(
+    \   'rg --column --line-number --no-heading --color=always --smart-case --hidden --no-ignore '.shellescape(<q-args>), 1,
+    \   fzf#vim#with_preview(), <bang>0)
+
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
@@ -43,11 +53,13 @@ nmap <leader><leader>f :FZFNeigh<CR>
 
 
 nmap <leader>f :Files<CR>
-nmap <leader>s :Rg<CR>
+nmap <leader>s :RgDotfiles<CR>
+" nmap <leader>s :Rg<CR>
 nmap <leader>h :History<CR>
 nmap <leader>b :Buffers<CR>
 
 " z is for exZperimental
+nmap <leader>zsgi :RgAll<CR>
 nmap <leader>zw :Windows<CR>
 nmap <leader>zhc :History:<CR>
 nmap <leader>zhs :History/<CR>
