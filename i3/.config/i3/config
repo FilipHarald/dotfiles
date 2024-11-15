@@ -220,4 +220,4 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
-exec /home/filip/bin/activitywatch/aw-qt
+exec /home/filip/bin/aw-qt

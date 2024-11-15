@@ -44,7 +44,7 @@ Plug 'nvim-lua/plenary.nvim'                    " required for some plugins
 
 " Track what I work with
 " Plug 'ActivityWatch/aw-watcher-vim'
-" Plug 'FilipHarald/aw-watcher-vim'
+Plug 'FilipHarald/aw-watcher-vim'
 " Plug '~/code/aw-watcher-vim'
 
 " vim for everything?
