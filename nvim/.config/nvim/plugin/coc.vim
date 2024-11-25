@@ -57,6 +57,15 @@ nmap <leader>cfs  <Plug>(coc-format-selected)
 xmap <leader>cfb  <Plug>(coc-format)
 nmap <leader>cfb  <Plug>(coc-format)
 
+function! MakeItNice()
+  call CocAction('organizeImport')
+  call CocAction('format')
+  :w
+endfunction
+
+xmap <leader><leader>j :call MakeItNice()<CR>
+nmap <leader><leader>j :call MakeItNice()<CR>
+
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
