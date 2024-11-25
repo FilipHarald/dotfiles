@@ -39,16 +39,11 @@ Plug 'haringsrob/nvim_context_vt'
 Plug 'echasnovski/mini.clue'                    " some help with keybinds
 Plug 'mbbill/undotree'                          " more powerful undo
 Plug 'nvim-lua/plenary.nvim'                    " required for some plugins
-" Plug 'FilipHarald/rstrt.nvim'                   " color current file winbar
-" Plug '~/code/priv/rstrt.nvim'                   " color current file winbar
 
 " Track what I work with
 " Plug 'ActivityWatch/aw-watcher-vim'
 Plug 'FilipHarald/aw-watcher-vim'
-" Plug '~/code/aw-watcher-vim'
-
-" vim for everything?
-Plug 'jrop/mongo.nvim'
+" Plug '~/c/aw-watcher-vim'
 
 call plug#end()
 
