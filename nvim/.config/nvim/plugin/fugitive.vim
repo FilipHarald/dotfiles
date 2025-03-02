@@ -4,6 +4,9 @@
 nmap <leader>gb :Git blame<CR>
 nmap <leader>gs :G<CR>
 
+" add latest changes to quickfix
+nmap <leader>gl :Glog -10 -- %<CR>
+
 " compare to master
 nmap <leader>gdb :Git difftool --name-only master<CR>
 nmap <leader>gdm :Gvdiffsplit master<CR>
