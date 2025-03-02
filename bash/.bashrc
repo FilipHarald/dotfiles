@@ -101,3 +101,4 @@ source <(kubectl completion bash)
 
 export PATH="$PATH:/home/filip/.foundry/bin"
 export PATH=$PATH:/home/filip/.aztec/bin
+export KUBE_EDITOR=nvim
