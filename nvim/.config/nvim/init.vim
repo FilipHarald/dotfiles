@@ -22,7 +22,7 @@ Plug 'github/copilot.vim'
 
 " AI
 " Plug 'pasky/claude.vim'
-Plug 'ErikBjare/gptme', { 'rtp': 'scripts/vim' }
+Plug 'ErikBjare/gptme.vim'
 
 " language-specific and LSP-stuff
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP integratinon
