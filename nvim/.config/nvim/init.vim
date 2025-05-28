@@ -128,6 +128,18 @@ colorscheme gruvbox-material
 " better matching brackets
 hi MatchParen cterm=none ctermbg=red ctermfg=white
 
+" Copy filename to clipboard
+nnoremap <leader>ain :let @+ = expand('%')<CR>:echo "Filename copied to clipboard!"<CR>
+
+" Copy filename and file content to clipboard
+function! s:CopyFileWithContent()
+  let filename = expand('%')
+  let content = join(getline(1, '$'), "\n")
+  let @+ = filename . ":\n\n```\n" . content . "\n```"
+  echo "Filename and content copied to clipboard!"
+endfunction
+nnoremap <leader>aif :call <SID>CopyFileWithContent()<CR>
+
 " recursive create folder on save
 function s:MkNonExDir(file, buf)
     if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
