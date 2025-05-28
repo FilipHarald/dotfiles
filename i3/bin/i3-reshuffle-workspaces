@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# Script to move workspaces to their configured outputs after i3 restart
+# Reads configuration directly from i3
+
+echo "Reshuffling workspaces to match i3 config..."
+
+# Get available outputs
+available_outputs=$(i3-msg -t get_outputs | jq -r '.[] | select(.active==true) | .name')
+echo "Available outputs:"
+echo "$available_outputs"
+
+# Get workspace output configuration from i3 config
+workspace_configs=$(i3-msg -t get_config | grep "^workspace [0-9]* output")
+
+echo "$workspace_configs" | while read -r line; do
+    if [[ -z "$line" ]]; then continue; fi
+    
+    # Parse workspace number and output preferences
+    ws_num=$(echo "$line" | awk '{print $2}')
+    output_prefs=$(echo "$line" | awk '{for(i=4;i<=NF;i++) print $i}')
+    
+    # Find the first available output from preferences
+    target_output=""
+    for pref_output in $output_prefs; do
+        if echo "$available_outputs" | grep -q "^$pref_output$"; then
+            target_output="$pref_output"
+            break
+        fi
+    done
+    
+    if [[ -z "$target_output" ]]; then
+        echo "Warning: No available output found for workspace $ws_num"
+        continue
+    fi
+    
+    # Check current location of this workspace
+    current_output=$(i3-msg -t get_workspaces | jq -r ".[] | select(.name==\"$ws_num\") | .output")
+    
+    if [[ -n "$current_output" && "$current_output" != "$target_output" ]]; then
+        echo "Moving workspace $ws_num from $current_output to $target_output..."
+        i3-msg "workspace $ws_num; move workspace to output $target_output" > /dev/null
+    elif [[ -n "$current_output" ]]; then
+        echo "Workspace $ws_num already on correct output: $target_output"
+    fi
+done
+
+echo "Done! Workspaces reshuffled according to config."
