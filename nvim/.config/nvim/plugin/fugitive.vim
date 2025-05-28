@@ -5,7 +5,15 @@ nmap <leader>gb :Git blame<CR>
 nmap <leader>gs :G<CR>
 
 " add latest changes to quickfix
-nmap <leader>gl :Glog -10 -- %<CR>
+function! GitLogForFileOrRepo()
+  if expand('%') == ''
+    G log -10
+  else
+    G log -10 -- %
+  endif
+endfunction
+
+nmap <leader>gl :call GitLogForFileOrRepo()<CR>
 
 " compare to master
 nmap <leader>gdb :Git difftool --name-only master<CR>
