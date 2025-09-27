@@ -129,13 +129,14 @@ colorscheme gruvbox-material
 hi MatchParen cterm=none ctermbg=red ctermfg=white
 
 " Copy filename to clipboard
-nnoremap <leader>ain :let @+ = expand('%')<CR>:echo "Filename copied to clipboard!"<CR>
+nnoremap <leader>air :let @+ = ""<CR>:echo "Clipboard cleared!"<CR>
+nnoremap <leader>ain :let @+ = @+ . "\n" . expand('%:p')<CR>:echo "Filename appended to clipboard!"<CR>
 
 " Copy filename and file content to clipboard
 function! s:CopyFileWithContent()
   let filename = expand('%')
   let content = join(getline(1, '$'), "\n")
-  let @+ = filename . ":\n\n```\n" . content . "\n```"
+  let @+ = @+ . filename . ":\n\n```\n" . content . "\n```"
   echo "Filename and content copied to clipboard!"
 endfunction
 nnoremap <leader>aif :call <SID>CopyFileWithContent()<CR>
