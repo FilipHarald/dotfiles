@@ -3,10 +3,9 @@ export HISTFILESIZE=
 export HISTSIZE=
 
 promptFunc() {
-  if [[ -x $(realpath "$HOME/bin/rstrt") ]]
-  then
-    WD=`pwd | $HOME/bin/rstrt --ps1-escape`
-    COLORIZED_DIR=`echo "${WD}" | awk -F/ '{print $NF}'`
+  if [[ -x $(realpath "$HOME/bin/rstrt") ]]; then
+    WD=$(pwd | $HOME/bin/rstrt --ps1-escape)
+    COLORIZED_DIR=$(echo "${WD}" | awk -F/ '{print $NF}')
     PS1="\`echo -e \"\[\a\]\[\033[01;32m\]\h\[\033[01;34m\] ${COLORIZED_DIR} \$ \"\`"
   else
     PS1='\[\a\]\[\033[01;32m\]\h\[\033[01;34m\] \W \$ \[\033[00m\]'
@@ -26,9 +25,9 @@ alias gpm='git pull origin master'
 alias dpsa='docker ps -a --format "table {{.Names}}\t{{.RunningFor}}\t{{.Status}}\t{{.Ports}}"'
 
 function gcb() {
-  git checkout -b "$@" && \
-  git push --set-upstream origin "$@" && \
-  git commit --allow-empty -m "empty commit"
+  git checkout -b "$@" &&
+    git push --set-upstream origin "$@" &&
+    git commit --allow-empty -m "empty commit"
   git push
 }
 function gsts() {
@@ -41,15 +40,15 @@ function gs() {
   git stash list
 }
 function g() {
-  gsts && \
-  echo "Would you like to add all files to current branch?" && read && echo "" && \
-  echo "====== GIT PULL ======"
-  git pull && echo "" && \
-  echo "====== GIT ADD ======"
-  git add --a && echo "" && \
-  echo "====== GIT COMMIT ======"
-  git commit -m "$@" && echo "" && \
-  echo "====== GIT PUSH ======"
+  gsts &&
+    echo "Would you like to add all files to current branch?" && read && echo "" &&
+    echo "====== GIT PULL ======"
+  git pull && echo "" &&
+    echo "====== GIT ADD ======"
+  git add --a && echo "" &&
+    echo "====== GIT COMMIT ======"
+  git commit -m "$@" && echo "" &&
+    echo "====== GIT PUSH ======"
   git push
 }
 
@@ -73,14 +72,13 @@ unset MANPATH
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-[ -f  /usr/share/doc/fzf/examples/key-bindings.bash ] && source /usr/share/doc/fzf/examples/key-bindings.bash
-[ -f  /usr/share/doc/fzf/examples/completion.bash ] && source /usr/share/doc/fzf/examples/completion.bash
+source ~/.fzf-tab-completion/bash/fzf-bash-completion.sh
+bind -x '"\t": fzf_bash_completion'
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 nvm use default --silent 2>/dev/null || true
 
 export PATH="$HOME/.local/bin:$PATH"
@@ -103,3 +101,16 @@ source <(kubectl completion bash)
 export PATH="$PATH:/home/filip/.foundry/bin"
 export PATH=$PATH:/home/filip/.aztec/bin
 export KUBE_EDITOR=nvim
+
+# pnpm
+export PNPM_HOME="/home/filip/.local/share/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# opencode
+export PATH=/home/filip/.opencode/bin:$PATH
+
+eval "$(fzf --bash)"
