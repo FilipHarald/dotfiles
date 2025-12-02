@@ -96,7 +96,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source <(kubectl completion bash)
+# source <(kubectl completion bash)
 
 export PATH="$PATH:/home/filip/.foundry/bin"
 export PATH=$PATH:/home/filip/.aztec/bin
