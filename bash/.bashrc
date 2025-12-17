@@ -114,3 +114,5 @@ esac
 export PATH=/home/filip/.opencode/bin:$PATH
 
 eval "$(fzf --bash)"
+
+export HISTCONTROL=ignoreboth:erasedups
