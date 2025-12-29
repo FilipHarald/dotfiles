@@ -10,3 +10,8 @@ SCRIPT_DIR="$HOME/bash-additions"
 if [ -f "$SCRIPT_DIR/git.sh" ]; then
     source "$SCRIPT_DIR/git.sh"
 fi
+
+# Source foundry configuration
+if [ -f "$SCRIPT_DIR/foundry.sh" ]; then
+    source "$SCRIPT_DIR/foundry.sh"
+fi
