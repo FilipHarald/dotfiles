@@ -89,6 +89,7 @@ return {
           title = "opencode stats",
           cmd = "opencode stats",
           section = "terminal",
+          ttl = 60 * 60,
           height = 40,
         }
       },
