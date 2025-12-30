@@ -9,7 +9,45 @@ return {
           { title = "CWD: " .. vim.fn.getcwd(), padding = 2 },
           { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 2 },
           { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 2 },
-          { section = "keys", padding = 2 },
+          {
+            icon = "󰂫 ",
+            title = "Obsidian",
+            padding = 2,
+            {
+              desc = "Dailies",
+              indent = 2,
+              key = "d",
+action = function()
+                require("lazy").load({ plugins = { "obsidian.nvim" } })
+                vim.cmd("Obsidian dailies -20 8")
+              end,
+            },
+            {
+              desc = "Today",
+              indent = 2,
+              key = "t",
+action = function()
+                require("lazy").load({ plugins = { "obsidian.nvim" } })
+                vim.cmd("Obsidian today")
+              end,
+            },
+            {
+              desc = "Obsidian Meeting",
+              indent = 2,
+              key = "m",
+action = function()
+                require("lazy").load({ plugins = { "obsidian.nvim" } })
+                vim.cmd("Obsidian new \"Meeting\"")
+              end,
+            },
+          },
+          {
+            title = "Keys",
+            icon = " ",
+            section = "keys",
+            padding = 2,
+            indent = 2,
+          },
           { section = "startup" },
         },
         {
