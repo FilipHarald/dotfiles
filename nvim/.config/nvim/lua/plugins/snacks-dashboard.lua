@@ -17,25 +17,43 @@ return {
               desc = "Dailies",
               indent = 2,
               key = "d",
-action = function()
+              action = function()
                 require("lazy").load({ plugins = { "obsidian.nvim" } })
                 vim.cmd("Obsidian dailies -20 8")
+              end,
+            },
+            {
+              desc = "Yesterday",
+              indent = 2,
+              key = "y",
+              action = function()
+                require("lazy").load({ plugins = { "obsidian.nvim" } })
+                vim.cmd("Obsidian yesterday")
               end,
             },
             {
               desc = "Today",
               indent = 2,
               key = "t",
-action = function()
+              action = function()
                 require("lazy").load({ plugins = { "obsidian.nvim" } })
                 vim.cmd("Obsidian today")
+              end,
+            },
+            {
+              desc = "Tomorrow",
+              indent = 2,
+              key = "w",
+              action = function()
+                require("lazy").load({ plugins = { "obsidian.nvim" } })
+                vim.cmd("Obsidian tomorrow")
               end,
             },
             {
               desc = "Obsidian Meeting",
               indent = 2,
               key = "m",
-action = function()
+              action = function()
                 require("lazy").load({ plugins = { "obsidian.nvim" } })
                 vim.cmd("Obsidian new \"Meeting\"")
               end,
@@ -70,7 +88,7 @@ action = function()
               action = function()
                 vim.ui.open("https://github.com/notifications")
               end,
-              key = "n",
+              key = "N",
               icon = " ",
               height = 5,
               enabled = true,

@@ -106,9 +106,19 @@ return {
       desc = "Obsidian: dailies",
     },
     {
+      "<leader>oy",
+      "<cmd>Obsidian yesterday<cr>",
+      desc = "Obsidian: dailies (yesterday)",
+    },
+    {
       "<leader>ot",
       "<cmd>Obsidian today<cr>",
       desc = "Obsidian: dailies (today)",
+    },
+    {
+      "<leader>ow",
+      "<cmd>Obsidian tomorrow<cr>",
+      desc = "Obsidian: dailies (tomorrow)",
     },
   },
 }
