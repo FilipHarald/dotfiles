@@ -11,11 +11,6 @@ if [ -f "$SCRIPT_DIR/git.sh" ]; then
     source "$SCRIPT_DIR/git.sh"
 fi
 
-# Source foundry configuration
-if [ -f "$SCRIPT_DIR/foundry.sh" ]; then
-    source "$SCRIPT_DIR/foundry.sh"
-fi
-
 # Source npm configuration
 if [ -f "$SCRIPT_DIR/npm.sh" ]; then
     source "$SCRIPT_DIR/npm.sh"
