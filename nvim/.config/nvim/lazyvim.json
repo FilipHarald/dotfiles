@@ -1,7 +1,7 @@
 {
   "extras": [
     "lazyvim.plugins.extras.ai.copilot-native",
-    "lazyvim.plugins.extras.ai.sidekick",
+    "lazyvim.plugins.extras.editor.dial",
     "lazyvim.plugins.extras.editor.fzf",
     "lazyvim.plugins.extras.editor.neo-tree",
     "lazyvim.plugins.extras.lang.ansible",
