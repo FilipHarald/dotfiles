@@ -52,7 +52,6 @@ ga() {
   local path="../${base}--${branch}"
 
   git worktree add -b "$branch" "$path"
-  mise trust "$path"
   cd "$path"
 }
 
