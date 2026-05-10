@@ -1,6 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "gruvbox",
   "plugin": [
     "@mohak34/opencode-notifier"
   ]
