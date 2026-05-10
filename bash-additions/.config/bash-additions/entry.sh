@@ -15,3 +15,15 @@ fi
 if [ -f "$SCRIPT_DIR/npm.sh" ]; then
     source "$SCRIPT_DIR/npm.sh"
 fi
+
+# Source shell overrides (history, etc.)
+if [ -f "$SCRIPT_DIR/shell.sh" ]; then
+    source "$SCRIPT_DIR/shell.sh"
+fi
+
+# Source Linear API credentials if available
+if [ -f "$HOME/linear/api.env" ]; then
+    source "$HOME/linear/api.env"
+fi
+
+set -h

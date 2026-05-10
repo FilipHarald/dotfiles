@@ -44,7 +44,7 @@ function g() {
 ga() {
   if [[ -z "$1" ]]; then
     echo "Usage: ga [branch name]"
-    exit 1
+    return 1
   fi
 
   local branch="$1"
