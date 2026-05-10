@@ -120,5 +120,15 @@ return {
       "<cmd>Obsidian tomorrow<cr>",
       desc = "Obsidian: dailies (tomorrow)",
     },
+    {
+      "<leader>os",
+      function()
+        require("lazy").load({ plugins = { "fzf-lua" } })
+        require("fzf-lua").files({
+          cwd = vim.fn.expand("~/Documents/obsidian/filip"),
+        })
+      end,
+      desc = "Obsidian: search vault",
+    },
   },
 }
