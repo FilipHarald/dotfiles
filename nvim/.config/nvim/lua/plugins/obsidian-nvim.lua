@@ -77,11 +77,6 @@ return {
       },
     },
 
-    -- Follow URLs on Linux
-    follow_url_func = function(url)
-      vim.fn.jobstart({ "xdg-open", url })
-    end,
-
     -- Search settings - show most recently modified notes first
     search = {
       sort_by = "modified",
