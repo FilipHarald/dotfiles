@@ -21,6 +21,11 @@ if [ -f "$SCRIPT_DIR/shell.sh" ]; then
     source "$SCRIPT_DIR/shell.sh"
 fi
 
+# Source opencode telemetry environment
+if [ -f "$SCRIPT_DIR/opencode.sh" ]; then
+    source "$SCRIPT_DIR/opencode.sh"
+fi
+
 # Source Linear API credentials if available
 if [ -f "$HOME/linear/api.env" ]; then
     source "$HOME/linear/api.env"
