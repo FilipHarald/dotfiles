@@ -1,5 +1,5 @@
 ---
-name: plan-ceo-review
+name: gstack-plan-ceo-review
 description: |
   CEO/founder-mode plan review. Rethink the problem, find the 10-star product,
   challenge premises, expand scope when it creates a better product. Four modes:

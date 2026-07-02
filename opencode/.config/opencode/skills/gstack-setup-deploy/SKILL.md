@@ -1,5 +1,5 @@
 ---
-name: setup-deploy
+name: gstack-setup-deploy
 description: |
   Configure deployment settings for /land-and-deploy. Detects your deploy
   platform (Fly.io, Render, Vercel, Netlify, Heroku, GitHub Actions, custom),

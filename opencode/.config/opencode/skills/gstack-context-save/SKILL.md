@@ -1,5 +1,5 @@
 ---
-name: context-save
+name: gstack-context-save
 description: |
   Save working context. Captures git state, decisions made, and remaining work
   so any future session can pick up without losing a beat.

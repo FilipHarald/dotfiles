@@ -1,5 +1,5 @@
 ---
-name: claude
+name: gstack-claude
 description: |
   Claude Code CLI wrapper for non-Claude hosts - three modes. Review: independent
   diff review via claude -p. Challenge: adversarial failure-mode review. Consult:

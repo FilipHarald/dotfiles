@@ -1,5 +1,5 @@
 ---
-name: design-shotgun
+name: gstack-design-shotgun
 description: |
   Design shotgun: generate multiple AI design variants, open a comparison board,
   collect structured feedback, and iterate. Standalone design exploration you can

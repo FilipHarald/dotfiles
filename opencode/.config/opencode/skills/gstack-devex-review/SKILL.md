@@ -1,5 +1,5 @@
 ---
-name: devex-review
+name: gstack-devex-review
 description: |
   Live developer experience audit. Uses the browse tool to actually TEST the
   developer experience: navigates docs, tries the getting started flow, times

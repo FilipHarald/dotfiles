@@ -1,5 +1,5 @@
 ---
-name: plan-tune
+name: gstack-plan-tune
 description: |
   Self-tuning question sensitivity + developer psychographic for gstack (v1: observational).
   Review which AskUserQuestion prompts fire across gstack skills, set per-question preferences

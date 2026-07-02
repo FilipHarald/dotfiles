@@ -1,5 +1,5 @@
 ---
-name: health
+name: gstack-health
 description: |
   Code quality dashboard. Wraps existing project tools (type checker, linter,
   test runner, dead code detector, shell linter), computes a weighted composite

@@ -1,5 +1,5 @@
 ---
-name: design-consultation
+name: gstack-design-consultation
 description: |
   Design consultation: understands your product, researches the landscape, proposes a
   complete design system (aesthetic, typography, color, layout, spacing, motion), and

@@ -1,5 +1,5 @@
 ---
-name: document-release
+name: gstack-document-release
 description: |
   Post-ship documentation update. Reads all project docs, cross-references the
   diff, updates README/ARCHITECTURE/CONTRIBUTING/CLAUDE.md to match what shipped,

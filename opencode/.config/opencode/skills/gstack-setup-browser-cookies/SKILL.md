@@ -1,5 +1,5 @@
 ---
-name: setup-browser-cookies
+name: gstack-setup-browser-cookies
 description: |
   Import cookies from your real Chromium browser into the headless browse session.
   Opens an interactive picker UI where you select which cookie domains to import.

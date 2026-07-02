@@ -1,5 +1,5 @@
 ---
-name: pair-agent
+name: gstack-pair-agent
 description: |
   Pair a remote AI agent with your browser. One command generates a setup key and
   prints instructions the other agent can follow to connect. Works with OpenClaw,

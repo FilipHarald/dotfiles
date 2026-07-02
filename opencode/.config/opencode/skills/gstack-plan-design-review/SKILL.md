@@ -1,5 +1,5 @@
 ---
-name: plan-design-review
+name: gstack-plan-design-review
 description: |
   Designer's eye plan review — interactive, like CEO and Eng review.
   Rates each design dimension 0-10, explains what would make it a 10,

@@ -1,5 +1,5 @@
 ---
-name: benchmark-models
+name: gstack-benchmark-models
 description: |
   Cross-model benchmark for gstack skills. Runs the same prompt through Claude,
   GPT (via Codex CLI), and Gemini side-by-side — compares latency, tokens, cost,

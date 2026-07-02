@@ -1,5 +1,5 @@
 ---
-name: open-gstack-browser
+name: gstack-open-gstack-browser
 description: |
   Launch GStack Browser — AI-controlled Chromium with the sidebar extension baked in.
   Opens a visible browser window where you can watch every action in real time.

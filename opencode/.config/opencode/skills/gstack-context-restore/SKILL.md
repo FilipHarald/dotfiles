@@ -1,5 +1,5 @@
 ---
-name: context-restore
+name: gstack-context-restore
 description: |
   Restore working context saved earlier by /context-save. Loads the most recent
   saved state (across all branches by default) so you can pick up where you

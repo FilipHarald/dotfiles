@@ -1,5 +1,5 @@
 ---
-name: design-html
+name: gstack-design-html
 description: |
   Design finalization: generates production-quality Pretext-native HTML/CSS.
   Works with approved mockups from /design-shotgun, CEO plans from /plan-ceo-review,

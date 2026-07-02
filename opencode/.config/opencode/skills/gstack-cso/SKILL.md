@@ -1,5 +1,5 @@
 ---
-name: cso
+name: gstack-cso
 description: |
   Chief Security Officer mode. Infrastructure-first security audit: secrets archaeology,
   dependency supply chain, CI/CD pipeline security, LLM/AI security, skill supply chain

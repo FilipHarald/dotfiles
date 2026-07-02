@@ -1,5 +1,5 @@
 ---
-name: careful
+name: gstack-careful
 description: |
   Safety guardrails for destructive commands. Warns before rm -rf, DROP TABLE,
   force-push, git reset --hard, kubectl delete, and similar destructive operations.

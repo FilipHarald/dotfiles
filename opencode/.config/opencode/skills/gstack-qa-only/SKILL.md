@@ -1,5 +1,5 @@
 ---
-name: qa-only
+name: gstack-qa-only
 description: |
   Report-only QA testing. Systematically tests a web application and produces a
   structured report with health score, screenshots, and repro steps — but never

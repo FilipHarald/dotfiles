@@ -1,5 +1,5 @@
 ---
-name: plan-devex-review
+name: gstack-plan-devex-review
 description: |
   Interactive developer experience plan review. Explores developer personas,
   benchmarks against competitors, designs magical moments, and traces friction

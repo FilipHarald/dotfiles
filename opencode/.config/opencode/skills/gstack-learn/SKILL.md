@@ -1,5 +1,5 @@
 ---
-name: learn
+name: gstack-learn
 description: |
   Manage project learnings. Review, search, prune, and export what gstack
   has learned across sessions. Use when asked to "what have we learned",

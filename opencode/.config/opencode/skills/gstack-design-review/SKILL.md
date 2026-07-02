@@ -1,5 +1,5 @@
 ---
-name: design-review
+name: gstack-design-review
 description: |
   Designer's eye QA: finds visual inconsistency, spacing issues, hierarchy problems,
   AI slop patterns, and slow interactions — then fixes them. Iteratively fixes issues

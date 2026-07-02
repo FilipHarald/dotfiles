@@ -1,5 +1,5 @@
 ---
-name: qa
+name: gstack-qa
 description: |
   Systematically QA test a web application and fix bugs found. Runs QA testing,
   then iteratively fixes bugs in source code, committing each fix atomically and

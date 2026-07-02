@@ -1,5 +1,5 @@
 ---
-name: browse
+name: gstack-browse
 description: |
   Fast headless browser for QA testing and site dogfooding. Navigate any URL, interact with
   elements, verify page state, diff before/after actions, take annotated screenshots, check

@@ -1,5 +1,5 @@
 ---
-name: office-hours
+name: gstack-office-hours
 description: |
   YC Office Hours — two modes. Startup mode: six forcing questions that expose
   demand reality, status quo, desperate specificity, narrowest wedge, observation,

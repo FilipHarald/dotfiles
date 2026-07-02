@@ -1,5 +1,5 @@
 ---
-name: canary
+name: gstack-canary
 description: |
   Post-deploy canary monitoring. Watches the live app for console errors,
   performance regressions, and page failures using the browse daemon. Takes

@@ -1,5 +1,5 @@
 ---
-name: setup-gbrain
+name: gstack-setup-gbrain
 description: |
   Set up gbrain for this coding agent: install the CLI, initialize a
   local PGLite or Supabase brain, register MCP, capture per-remote trust

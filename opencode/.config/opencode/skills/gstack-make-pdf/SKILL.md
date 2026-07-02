@@ -1,5 +1,5 @@
 ---
-name: make-pdf
+name: gstack-make-pdf
 description: |
   Turn any markdown file into a publication-quality PDF. Proper 1in margins,
   intelligent page breaks, page numbers, cover pages, running headers, curly

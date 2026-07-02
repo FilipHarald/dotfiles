@@ -1,5 +1,5 @@
 ---
-name: landing-report
+name: gstack-landing-report
 description: |
   Read-only queue dashboard for workspace-aware ship. Shows which VERSION slots
   are currently claimed by open PRs, which sibling Conductor workspaces have
