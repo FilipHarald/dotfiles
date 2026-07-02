@@ -1,6 +1,22 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "skill": {
+      "gstack*": "deny",
+    }
+  },
   "plugin": [
     "@devtheops/opencode-plugin-otel"
-  ]
+  ],
+  "autoupdate": true,
+  "mcp": {
+    "gbrain-decem": {
+      "type": "remote",
+      "url": "http://decem.taila8aaf1.ts.net:3001/mcp",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer {env:GBRAIN_DECEM_MCP_TOKEN}"
+      }
+    }
+  }
 }
