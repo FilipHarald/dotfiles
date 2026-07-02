@@ -2,6 +2,10 @@
 
 # Override Omarchy default shell settings.
 
+# Keep SSH/tmux shells aligned with the graphical Omarchy session.
+export EDITOR=nvim
+export VISUAL=nvim
+
 # Keep all Bash history and sync it between open terminals promptly.
 shopt -s histappend
 HISTSIZE=-1
