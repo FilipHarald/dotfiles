@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/tui.json",
-  "mouse": false,
+  "mouse": true,
   "theme": "system",
   "attention": {
     "enabled": true,
