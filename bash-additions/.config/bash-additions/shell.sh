@@ -5,6 +5,7 @@
 # Keep SSH/tmux shells aligned with the graphical Omarchy session.
 export EDITOR=nvim
 export VISUAL=nvim
+export PATH="$HOME/.cargo/bin:$HOME/omarchy-supplement/bin:/home/filip/.cache/.bun/bin:$PATH"
 
 # Keep all Bash history and sync it between open terminals promptly.
 shopt -s histappend

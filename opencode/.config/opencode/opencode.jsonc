@@ -3,6 +3,8 @@
   "permission": {
     "skill": {
       "gstack*": "deny",
+      "terminal-control*": "deny",
+      "code-walkthrough*": "deny",
     }
   },
   "plugin": [
