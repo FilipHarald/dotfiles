@@ -1,9 +1,8 @@
 port = 5600
-discovery_paths = [
-  "/home/filip/.local/bin",
-  "/home/filip/.local/share/activitywatch/aw-tauri/modules",
-  "/home/filip/aw-modules",
-]
+# aw-tauri already discovers paths relative to the current user's home:
+# ~/bin, ~/.local/bin, ~/.local/share/activitywatch/aw-tauri/modules,
+# ~/aw-modules, and $PATH.
+discovery_paths = []
 
 [autostart]
 enabled = true

@@ -15,6 +15,7 @@ Environment=BUZZ_ACP_RESPOND_TO=owner-only
 Environment=BUZZ_ACP_ALLOWED_RESPOND_TO=owner-only
 Environment=BUZZ_ACP_LAZY_POOL=false
 Environment=BUZZ_ACP_SYSTEM_PROMPT_FILE=%h/.config/opencode/decemroot-prompt.md
+Environment=BUZZ_ACP_DIRECTORY_PROFILE_FILE=%h/.config/buzz-acp/decemroot-profile.json
 Environment=OPENCODE_CONFIG=%h/.config/opencode/decemroot.jsonc
 EnvironmentFile=%h/.config/opencode/opencode.env
 EnvironmentFile=%h/.config/buzz-acp/decemroot.env
