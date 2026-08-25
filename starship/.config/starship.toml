@@ -1,6 +1,6 @@
 add_newline = true
 command_timeout = 200
-format = "$hostname[$directory$git_branch$git_status]($style)$character"
+format = "$hostname[$directory$git_branch$git_status]($style)$custom$character"
 
 [character]
 error_symbol = "[✗](bold cyan)"
@@ -36,3 +36,9 @@ ssh_only = true
 format = '[$hostname]($style) '
 style = 'bold red'
 disabled = false
+
+[custom.opencode_sessions]
+command = '"$HOME/.config/starship/opencode-sessions.sh"'
+format = '[$output]($style) '
+style = 'dimmed cyan'
+when = 'command -v opencode >/dev/null 2>&1 && command -v jq >/dev/null 2>&1'
