@@ -8,7 +8,8 @@
     }
   },
   "plugin": [
-    "@devtheops/opencode-plugin-otel"
+    "@devtheops/opencode-plugin-otel",
+    "./plugins/activitywatch.ts"
   ],
   "autoupdate": true,
   "mcp": {
