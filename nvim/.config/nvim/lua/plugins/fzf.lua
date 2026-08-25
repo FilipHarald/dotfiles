@@ -5,6 +5,10 @@ return {
 			["--no-scrollbar"] = true,
 			["--history"] = vim.fn.stdpath("data") .. "/fzf-history",
 		},
+		grep = {
+			hidden = true,
+			multiprocess = false,
+		},
 		winopts = {
 			width = 0.9,
 			height = 0.9,
