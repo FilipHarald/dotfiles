@@ -13,6 +13,6 @@
     }
   },
   "plugin": [
-    "./plugins/inventory.tsx"
+    "./herdr-tui-session.js"
   ]
 }
