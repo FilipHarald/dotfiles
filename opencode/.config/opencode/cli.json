@@ -5,14 +5,12 @@
     "mode": "system"
   },
   "plugins": [
+    "-opencode.notifications",
     "./herdr-tui-session.js"
   ],
   "attention": {
-    "enabled": true,
-    "notifications": true,
-    "sound": true,
-    "volume": 0.4,
-    "sound_pack": "opencode.default"
+    "notifications": false,
+    "sound": false
   },
   "diffs": {
     "wrap": "word"
