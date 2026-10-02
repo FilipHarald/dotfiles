@@ -1,6 +1,5 @@
 return {
   "knownasnaffy/himalaya.nvim",
-  dir = vim.fn.expand("~/c/himalaya.nvim"),
   dependencies = {
     "MunifTanjim/nui.nvim",
   },
