@@ -7,7 +7,7 @@ discovery_paths = []
 [autostart]
 enabled = true
 minimized = true
-modules = ["aw-awatcher"]
+modules = ["aw-awatcher", "aw-watcher-steam"]
 
 [module_args]
 "aw-awatcher" = ""
