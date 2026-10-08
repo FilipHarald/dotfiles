@@ -6,6 +6,9 @@
     { "action": "skill", "resource": "code-walkthrough*", "effect": "deny" },
   ],
   "update": "auto",
+  "plugins": [
+    "/home/filip/dotfiles/opencode/.config/opencode/plugins/activitywatch"
+  ],
   "mcp": {
     "servers": {
       "gbrain-decem": {
