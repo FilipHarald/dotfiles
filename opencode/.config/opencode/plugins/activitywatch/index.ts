@@ -10,13 +10,17 @@ type ActivityEvent = {
   properties?: {
     sessionID?: string
     title?: string
-    info?: { id?: string; title?: string }
+    info?: { id?: string; title?: string; projectID?: string; location?: { directory?: string } }
+    projectID?: string
+    location?: { directory?: string }
     [key: string]: unknown
   }
   data?: {
     sessionID?: string
     title?: string
-    info?: { id?: string; title?: string }
+    info?: { id?: string; title?: string; projectID?: string; location?: { directory?: string } }
+    projectID?: string
+    location?: { directory?: string }
     [key: string]: unknown
   }
 }
@@ -29,6 +33,14 @@ type Context = {
   }
   event: {
     subscribe(input?: { signal?: AbortSignal }): AsyncIterable<unknown>
+  }
+  session?: {
+    get(input: { sessionID: string }): Promise<{
+      id?: string
+      title?: string
+      projectID?: string
+      location?: { directory?: string }
+    }>
   }
 }
 
@@ -52,6 +64,15 @@ const INTERESTING_EVENTS = new Set([
 
 const details = (event: ActivityEvent) => event.properties ?? event.data ?? {}
 
+const eventLocation = (event: ActivityEvent) => {
+  const payload = details(event)
+  const info = payload.info
+  return {
+    directory: payload.location?.directory ?? info?.location?.directory,
+    projectID: payload.projectID ?? info?.projectID,
+  }
+}
+
 const plugin = {
   id: "local.activitywatch",
   setup(context: Context) {
@@ -61,7 +82,8 @@ const plugin = {
     const server = (options.server ?? "http://127.0.0.1:5600").replace(/\/$/, "")
     const pulsetime = options.pulsetime ?? 30
     const directory = context.location.directory
-    const project = context.location.project?.id ?? directory.split("/").filter(Boolean).at(-1) ?? "unknown"
+    const projectID = context.location.project?.id
+    const project = projectID ?? directory.split("/").filter(Boolean).at(-1) ?? "unknown"
     const sessionTitles = new Map<string, string>()
     const abort = new AbortController()
     let bucketReady: Promise<string> | undefined
@@ -104,6 +126,12 @@ const plugin = {
       const payload = details(event)
       const info = payload.info
       const sessionID = payload.sessionID ?? info?.id
+      let owner = eventLocation(event)
+      if (!owner.directory && !owner.projectID && sessionID && context.session) {
+        const session = await context.session.get({ sessionID }).catch(() => undefined)
+        owner = { directory: session?.location?.directory, projectID: session?.projectID }
+      }
+      if (owner.directory ? owner.directory !== directory : owner.projectID && projectID && owner.projectID !== projectID) return
       const nextTitle = payload.title ?? info?.title
       if (sessionID && nextTitle) sessionTitles.set(sessionID, nextTitle)
 
