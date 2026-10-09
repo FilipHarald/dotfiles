@@ -12,9 +12,10 @@ The shared `~/.config/mise/config.toml` declares:
 "~/.config/activitywatch/aw-tauri/config.toml" = { mode = "track", variants = [{ profile = "octi" }, { profile = "decem" }] }
 ```
 
-The `octi` variant autostarts only `aw-awatcher`. The `decem` variant
-autostarts `aw-awatcher` and `aw-watcher-steam`. The Steam watcher must not
-be installed on `octi`; syncing its configuration does not install packages.
+Both the `octi` and `decem` variants autostart only `aw-awatcher`. The Steam
+watcher has been removed from both machines; focused-window tracking remains
+enabled. Existing ActivityWatch history is preserved. Syncing this configuration
+does not install packages.
 
 Each machine's `dev.mise.mise-history.service` has a local `profile.conf`
 drop-in setting `MISE_ENV` to its hostname. The watcher automatically saves,
